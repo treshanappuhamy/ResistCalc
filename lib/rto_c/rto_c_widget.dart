@@ -390,19 +390,15 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: Align(
-                    alignment: const AlignmentDirectional(0.0, 1.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
-                      child: FlutterFlowAdBanner(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 50.0,
-                        showsTestAd: true,
-                        androidAdUnitID:
-                            'ca-app-pub-2953271805200465/1205425363',
-                      ),
+                Align(
+                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                    child: FlutterFlowAdBanner(
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: 50.0,
+                      showsTestAd: true,
+                      androidAdUnitID: 'ca-app-pub-2953271805200465/1205425363',
                     ),
                   ),
                 ),
