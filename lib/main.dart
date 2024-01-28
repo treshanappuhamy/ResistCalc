@@ -7,7 +7,6 @@ import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'index.dart';
 
 void main() async {
@@ -127,25 +126,22 @@ class _NavBarPageState extends State<NavBarPage> {
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.affiliatetheme,
-              size: 0.0,
+            icon: Icon(
+              Icons.manage_search,
             ),
             label: 'R2C',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              FFIcons.kc2r,
-              size: 0.0,
+              Icons.format_color_fill,
             ),
             label: 'C2R',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.camera_outdoor,
-              size: 0.0,
+              Icons.camera_enhance,
             ),
             label: 'AI CAMERA',
             tooltip: '',

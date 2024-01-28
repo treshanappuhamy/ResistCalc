@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/components/aboutapp_widget.dart';
+import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -160,189 +161,249 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
-                  child: Text(
-                    valueOrDefault<String>(
-                      functions.value2colour(
-                          double.tryParse(_model.textController.text),
-                          _model.dropDownValue1,
-                          _model.dropDownValue2),
-                      'null',
+                Expanded(
+                  child: Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: SizedBox(
+                      height: 300.0,
+                      child: Stack(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        children: [
+                          Align(
+                            alignment: const AlignmentDirectional(-0.16, -0.45),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 40.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  functions.value2colour(
+                                      double.tryParse(
+                                          _model.textController.text),
+                                      _model.dropDownValue1,
+                                      _model.dropDownValue2),
+                                  'null',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      fontSize: 25.0,
+                                    ),
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(-0.78, -0.06),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  50.0, 0.0, 50.0, 10.0),
+                              child: StreamBuilder<List<NmBANDSRecord>>(
+                                stream: queryNmBANDSRecord(
+                                  queryBuilder: (nmBANDSRecord) =>
+                                      nmBANDSRecord.orderBy('numnum'),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<NmBANDSRecord>
+                                      dropDownNmBANDSRecordList =
+                                      snapshot.data!;
+                                  return FlutterFlowDropDown<String>(
+                                    controller:
+                                        _model.dropDownValueController1 ??=
+                                            FormFieldController<String>(
+                                      _model.dropDownValue1 ??= 'THREE',
+                                    ),
+                                    options: dropDownNmBANDSRecordList
+                                        .map((e) => e.output)
+                                        .toList(),
+                                    onChanged: (val) => setState(
+                                        () => _model.dropDownValue1 = val),
+                                    width: 290.0,
+                                    height: 35.0,
+                                    textStyle:
+                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    hintText:
+                                        'Please select the number of bands',
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    elevation: 2.0,
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    borderWidth: 2.0,
+                                    borderRadius: 8.0,
+                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 4.0, 16.0, 4.0),
+                                    hidesUnderline: true,
+                                    isOverButton: true,
+                                    isSearchable: false,
+                                    isMultiSelect: false,
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.4),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        50.0, 0.0, 8.0, 0.0),
+                                    child: TextFormField(
+                                      controller: _model.textController,
+                                      focusNode: _model.textFieldFocusNode,
+                                      onChanged: (_) => EasyDebounce.debounce(
+                                        '_model.textController',
+                                        const Duration(milliseconds: 2),
+                                        () => setState(() {}),
+                                      ),
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Enter the Resistance Value',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium,
+                                        alignLabelWithHint: false,
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium,
+                                        enabledBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        errorBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedErrorBorder:
+                                            UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium,
+                                      textAlign: TextAlign.start,
+                                      keyboardType:
+                                          const TextInputType.numberWithOptions(
+                                              decimal: true),
+                                      validator: _model.textControllerValidator
+                                          .asValidator(context),
+                                      inputFormatters: [
+                                        FilteringTextInputFormatter.allow(
+                                            RegExp('[0-9]'))
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 50.0, 0.0),
+                                  child: FlutterFlowDropDown<String>(
+                                    controller:
+                                        _model.dropDownValueController2 ??=
+                                            FormFieldController<String>(
+                                      _model.dropDownValue2 ??= 'Ω',
+                                    ),
+                                    options: const ['Ω', 'kΩ', 'MΩ', 'GΩ'],
+                                    onChanged: (val) => setState(
+                                        () => _model.dropDownValue2 = val),
+                                    width: 90.0,
+                                    height: 50.0,
+                                    textStyle:
+                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    hintText: 'Please select...',
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    elevation: 2.0,
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    borderWidth: 2.0,
+                                    borderRadius: 8.0,
+                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 4.0, 16.0, 4.0),
+                                    hidesUnderline: true,
+                                    isOverButton: true,
+                                    isSearchable: false,
+                                    isMultiSelect: false,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          fontSize: 25.0,
-                        ),
                   ),
                 ),
-                Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
-                    child: StreamBuilder<List<NmBANDSRecord>>(
-                      stream: queryNmBANDSRecord(
-                        queryBuilder: (nmBANDSRecord) =>
-                            nmBANDSRecord.orderBy('numnum'),
+                Expanded(
+                  child: Align(
+                    alignment: const AlignmentDirectional(0.0, 1.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                      child: FlutterFlowAdBanner(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 50.0,
+                        showsTestAd: true,
+                        androidAdUnitID:
+                            'ca-app-pub-2953271805200465/1205425363',
                       ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-                        List<NmBANDSRecord> dropDownNmBANDSRecordList =
-                            snapshot.data!;
-                        return FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController1 ??=
-                              FormFieldController<String>(
-                            _model.dropDownValue1 ??= 'THREE',
-                          ),
-                          options: dropDownNmBANDSRecordList
-                              .map((e) => e.output)
-                              .toList(),
-                          onChanged: (val) =>
-                              setState(() => _model.dropDownValue1 = val),
-                          width: 290.0,
-                          height: 35.0,
-                          textStyle: FlutterFlowTheme.of(context).bodyMedium,
-                          hintText: 'Please select the number of bands',
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24.0,
-                          ),
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          elevation: 2.0,
-                          borderColor: FlutterFlowTheme.of(context).alternate,
-                          borderWidth: 2.0,
-                          borderRadius: 8.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 4.0, 16.0, 4.0),
-                          hidesUnderline: true,
-                          isOverButton: true,
-                          isSearchable: false,
-                          isMultiSelect: false,
-                        );
-                      },
                     ),
-                  ),
-                ),
-                Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              50.0, 0.0, 8.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.textController,
-                            focusNode: _model.textFieldFocusNode,
-                            onChanged: (_) => EasyDebounce.debounce(
-                              '_model.textController',
-                              const Duration(milliseconds: 2),
-                              () => setState(() {}),
-                            ),
-                            autofocus: true,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: 'Enter the Resistance Value',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              alignLabelWithHint: false,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alternate,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              errorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedErrorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                            ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
-                            textAlign: TextAlign.start,
-                            keyboardType: const TextInputType.numberWithOptions(
-                                decimal: true),
-                            validator: _model.textControllerValidator
-                                .asValidator(context),
-                            inputFormatters: [
-                              FilteringTextInputFormatter.allow(RegExp('[0-9]'))
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
-                        child: FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController2 ??=
-                              FormFieldController<String>(
-                            _model.dropDownValue2 ??= 'Ω',
-                          ),
-                          options: const ['Ω', 'kΩ', 'MΩ', 'GΩ'],
-                          onChanged: (val) =>
-                              setState(() => _model.dropDownValue2 = val),
-                          width: 90.0,
-                          height: 50.0,
-                          textStyle: FlutterFlowTheme.of(context).bodyMedium,
-                          hintText: 'Please select...',
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24.0,
-                          ),
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          elevation: 2.0,
-                          borderColor: FlutterFlowTheme.of(context).alternate,
-                          borderWidth: 2.0,
-                          borderRadius: 8.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 4.0, 16.0, 4.0),
-                          hidesUnderline: true,
-                          isOverButton: true,
-                          isSearchable: false,
-                          isMultiSelect: false,
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ],
