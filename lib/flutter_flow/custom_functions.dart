@@ -911,7 +911,7 @@ String? value2colour(
   String? numBands,
   String? symb,
 ) {
-// Standard resistor color code
+  // Standard resistor color code
   List<String> colorCodes = [
     "BLACK",
     "BROWN",
@@ -941,7 +941,7 @@ String? value2colour(
   }
 
   // Parse numBands as an integer
-  int numBandsInt = int.tryParse(numBands) ?? 0;
+  //int numBandsInt = int.tryParse(numBands) ?? 0;
 
   // Adjust resistValue based on the symb
   switch (symb) {
@@ -962,7 +962,7 @@ String? value2colour(
       return null;
   }
 
-  // Calculate the first two digits
+  // Calculate the first three digits
   int firstDigit =
       (resistValue / math.pow(10, (math.log(resistValue) / math.ln10).floor()))
           .floor();
@@ -970,32 +970,52 @@ String? value2colour(
               math.pow(10, (math.log(resistValue) / math.ln10).floor() - 1))
           .floor()) %
       10;
+  int thirdDigit = ((resistValue /
+              math.pow(10, (math.log(resistValue) / math.ln10).floor() - 2))
+          .floor()) %
+      10;
 
   // Calculate the multiplier (number of trailing zeros)
   int multiplierExponent = (math.log(resistValue) / math.ln10).floor() - 1;
 
-  // Assign colors to bands
+  // Assign colors to bands for 3, 4, 5, and 6 bands
   String? color1 = (firstDigit >= 0 && firstDigit < colorCodes.length)
       ? colorCodes[firstDigit]
       : null;
   String? color2 = (secondDigit >= 0 && secondDigit < colorCodes.length)
       ? colorCodes[secondDigit]
       : null;
-  String? color3 =
+  String? color3 = (thirdDigit >= 0 && thirdDigit < colorCodes.length)
+      ? colorCodes[thirdDigit]
+      : null;
+  String? multiplierColor =
       (multiplierExponent >= 0 && multiplierExponent < colorCodes.length)
           ? colorCodes[multiplierExponent]
           : null;
 
-  if (color1 == null || color2 == null || color3 == null) {
+  if (color1 == null ||
+      color2 == null ||
+      color3 == null ||
+      multiplierColor == null) {
     return null;
   }
 
   // For 4-band and 5-band resistors, add tolerance band
-  if (numBandsInt >= 4) {
-    // You can customize the tolerance color based on your requirements
+  if (numBands == "FOUR" && numBands == "FIVE" && numBands == "SIX") {
+    // Customize the tolerance color based on your requirements
     String toleranceColor = "Gold";
-    return '$color1 - $color2 - $color3 - $toleranceColor';
+
+    // For 6-band resistors, add temperature coefficient band
+    if (numBands == "SIX") {
+      // Customize the temperature coefficient color based on your requirements
+      String tempCoefficientColor = "Brown";
+      return '$color1 - $color2 - $color3 - $multiplierColor - $toleranceColor - $tempCoefficientColor';
+    }
+
+    // You can customize the last two bands based on your requirements
+    String band4Color = "Blue";
+    return '$color1 - $color2 - $color3 - $multiplierColor - $band4Color - $toleranceColor';
   }
 
-  return '$color1 - $color2 - $color3';
+  //return '$color1 - $color2 - $color3 - $multiplierColor';
 }

@@ -81,7 +81,7 @@ class _ThreebandWidgetState extends State<ThreebandWidget>
           backgroundColor: FlutterFlowTheme.of(context).accent4,
           automaticallyImplyLeading: false,
           title: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(-1.0, -1.0),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
