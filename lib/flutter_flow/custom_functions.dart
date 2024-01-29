@@ -910,8 +910,9 @@ String? value2colour(
   double? resistValue,
   String? numBands,
   String? symb,
+  String? tol,
 ) {
-  // Standard resistor color code
+// Standard resistor color code
   List<String> colorCodes = [
     "BLACK",
     "BROWN",
@@ -1017,5 +1018,180 @@ String? value2colour(
     return '$color1 - $color2 - $color3 - $multiplierColor - $band4Color - $toleranceColor';
   }
 
-  //return '$color1 - $color2 - $color3 - $multiplierColor';
+  if (numBands == "THREE") {
+    return '$color1,$color2,$multiplierColor';
+  }
+
+  if (numBands == "FOUR") {
+    if (tol == "±1%") {
+      String band4Color = "BROWN";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+    if (tol == "±2%") {
+      String band4Color = "RED";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+    if (tol == "±0.05%") {
+      String band4Color = "ORANGE";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+    if (tol == "±0.02%") {
+      String band4Color = "YELLOW";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+    if (tol == "±0.5%") {
+      String band4Color = "GREEN";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+    if (tol == "±0.25%") {
+      String band4Color = "BLUE";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+    if (tol == "±0.1%") {
+      String band4Color = "VIOLET";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+    if (tol == "±0.01%") {
+      String band4Color = "GREY";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+    if (tol == "±5%") {
+      String band4Color = "GOLD";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+    if (tol == "±10%") {
+      String band4Color = "SILVER";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+    if (tol == "±20%") {
+      String band4Color = "NONE";
+      return '$color1,$color2,$multiplierColor,$band4Color';
+    }
+  }
+// 55555555555555555555555555555555555555555555555555555
+  if (numBands == "FIVE") {
+    int multiplierExponent = (math.log(resistValue) / math.ln10).floor() - 2;
+    String? multiplierColor =
+        (multiplierExponent >= 0 && multiplierExponent < colorCodes.length)
+            ? colorCodes[multiplierExponent]
+            : null;
+
+    if (tol == "±1%") {
+      String band4Color = "BROWN";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±2%") {
+      String band4Color = "RED";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.05%") {
+      String band4Color = "ORANGE";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.02%") {
+      String band4Color = "YELLOW";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.5%") {
+      String band4Color = "GREEN";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.25%") {
+      String band4Color = "BLUE";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.1%") {
+      String band4Color = "VIOLET";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.01%") {
+      String band4Color = "GREY";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±5%") {
+      String band4Color = "GOLD";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±10%") {
+      String band4Color = "SILVER";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±20%") {
+      String band4Color = "NONE";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+  }
+
+// 666666666666666666666666666666666666666666666666666666
+  //String tempo = null;
+  //if(tempy == null){String tempo = null;}
+
+  if (numBands == "SIX") {
+    int multiplierExponent = (math.log(resistValue) / math.ln10).floor() - 2;
+    String? multiplierColor =
+        (multiplierExponent >= 0 && multiplierExponent < colorCodes.length)
+            ? colorCodes[multiplierExponent]
+            : null;
+
+    if (tol == "±1%") {
+      String band4Color = "BROWN";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±2%") {
+      String band4Color = "RED";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.05%") {
+      String band4Color = "ORANGE";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.02%") {
+      String band4Color = "YELLOW";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.5%") {
+      String band4Color = "GREEN";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.25%") {
+      String band4Color = "BLUE";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.1%") {
+      String band4Color = "VIOLET";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±0.01%") {
+      String band4Color = "GREY";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±5%") {
+      String band4Color = "GOLD";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±10%") {
+      String band4Color = "SILVER";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+    if (tol == "±20%") {
+      String band4Color = "NONE";
+      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+    }
+  }
+}
+
+List<String>? arg2color(
+  double? resistValue,
+  String? numBands,
+  String? symb,
+  String? tol,
+) {
+  String? arg1 = value2colour(resistValue, numBands, symb, tol);
+
+  if (arg1 == null) {
+    return null;
+  }
+
+  List<String> color1 = arg1.split(',').map((color) => color.trim()).toList();
+  return color1;
 }
