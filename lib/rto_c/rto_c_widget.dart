@@ -558,10 +558,6 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                               validator: _model
                                                   .textControllerValidator
                                                   .asValidator(context),
-                                              inputFormatters: [
-                                                FilteringTextInputFormatter
-                                                    .allow(RegExp('[0-9]'))
-                                              ],
                                             ),
                                           ),
                                         ),

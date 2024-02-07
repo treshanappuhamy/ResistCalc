@@ -1151,7 +1151,7 @@ String? value2colour(
     }
     if (tol == "±0.5%") {
       String band4Color = "GREEN";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.25%") {
       String band4Color = "BLUE";

@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.resistance</string>
+	<string>com.kdrinc.resistance</string>
 	<key>PROJECT_ID</key>
 	<string>resistance-1aa45</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:780221337444:ios:a3e8040f58fa4c53637471</string>
+	<string>1:780221337444:ios:6e84d4ffac2407b0637471</string>
 </dict>
 </plist>

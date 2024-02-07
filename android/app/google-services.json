@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:780221337444:android:47fe1f7a3f1d6c80637471",
+        "android_client_info": {
+          "package_name": "com.kdrinc.resistance"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh7vy3sG4XYlkinJ3jxHzAgq-5aNJT1bM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:780221337444:android:bb1d372f31825d6c637471",
         "android_client_info": {
           "package_name": "com.mycompany.resistance"
