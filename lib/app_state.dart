@@ -39,6 +39,18 @@ class FFAppState extends ChangeNotifier {
   set secondband(int value) {
     _secondband = value;
   }
+
+  String _band1color = '';
+  String get band1color => _band1color;
+  set band1color(String value) {
+    _band1color = value;
+  }
+
+  String _band2color = '';
+  String get band2color => _band2color;
+  set band2color(String value) {
+    _band2color = value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {
