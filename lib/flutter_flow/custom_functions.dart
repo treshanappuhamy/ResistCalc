@@ -1078,47 +1078,47 @@ String? value2colour(
 
     if (tol == "±1%") {
       String band4Color = "BROWN";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±2%") {
       String band4Color = "RED";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.05%") {
       String band4Color = "ORANGE";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.02%") {
       String band4Color = "YELLOW";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.5%") {
       String band4Color = "GREEN";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.25%") {
       String band4Color = "BLUE";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.1%") {
       String band4Color = "VIOLET";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.01%") {
       String band4Color = "GREY";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±5%") {
       String band4Color = "GOLD";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±10%") {
       String band4Color = "SILVER";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±20%") {
       String band4Color = "NONE";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
   }
 
@@ -1135,19 +1135,19 @@ String? value2colour(
 
     if (tol == "±1%") {
       String band4Color = "BROWN";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±2%") {
       String band4Color = "RED";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.05%") {
       String band4Color = "ORANGE";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.02%") {
       String band4Color = "YELLOW";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.5%") {
       String band4Color = "GREEN";
@@ -1155,27 +1155,27 @@ String? value2colour(
     }
     if (tol == "±0.25%") {
       String band4Color = "BLUE";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.1%") {
       String band4Color = "VIOLET";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±0.01%") {
       String band4Color = "GREY";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±5%") {
       String band4Color = "GOLD";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±10%") {
       String band4Color = "SILVER";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
     if (tol == "±20%") {
       String band4Color = "NONE";
-      return '$color1,$color2,$multiplierColor,$band4Color,$color3';
+      return '$color1,$color2,$multiplierColor,$color3,$band4Color';
     }
   }
 }

@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/components/aboutapp_widget.dart';
-import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -28,7 +27,20 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
-    'textOnPageLoadAnimation': AnimationInfo(
+    'textOnPageLoadAnimation1': AnimationInfo(
+      loop: true,
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.bounceOut,
+          delay: 0.ms,
+          duration: 1330.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+      ],
+    ),
+    'textOnPageLoadAnimation2': AnimationInfo(
       loop: true,
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -222,6 +234,10 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                               'WHITE') {
                                             return FlutterFlowTheme.of(context)
                                                 .info;
+                                          } else if (FFAppState().band2color ==
+                                              'BLACK') {
+                                            return FlutterFlowTheme.of(context)
+                                                .primaryText;
                                           } else {
                                             return const Color(0x00000000);
                                           }
@@ -238,98 +254,286 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                 ),
-                              Align(
-                                alignment: const AlignmentDirectional(-0.11, -1.15),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 72.0, 9.0, 0.0),
-                                  child: Container(
-                                    width: 10.0,
-                                    height: 46.0,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).warning,
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(0.0),
-                                        bottomRight: Radius.circular(0.0),
-                                        topLeft: Radius.circular(0.0),
-                                        topRight: Radius.circular(0.0),
+                              if (_model.textController.text != '')
+                                Align(
+                                  alignment: const AlignmentDirectional(-0.11, -1.15),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 72.0, 9.0, 0.0),
+                                    child: Container(
+                                      width: 10.0,
+                                      height: 46.0,
+                                      decoration: BoxDecoration(
+                                        color: () {
+                                          if (FFAppState().band3color ==
+                                              'BLACK') {
+                                            return Colors.black;
+                                          } else if (FFAppState().band3color ==
+                                              'BROWN') {
+                                            return FlutterFlowTheme.of(context)
+                                                .accent3;
+                                          } else if (FFAppState().band3color ==
+                                              'RED') {
+                                            return FlutterFlowTheme.of(context)
+                                                .error;
+                                          } else if (FFAppState().band3color ==
+                                              'ORANGE') {
+                                            return FlutterFlowTheme.of(context)
+                                                .tertiary;
+                                          } else if (FFAppState().band3color ==
+                                              'YELLOW') {
+                                            return FlutterFlowTheme.of(context)
+                                                .warning;
+                                          } else if (FFAppState().band3color ==
+                                              'GREEN') {
+                                            return FlutterFlowTheme.of(context)
+                                                .success;
+                                          } else if (FFAppState().band3color ==
+                                              'BLUE') {
+                                            return FlutterFlowTheme.of(context)
+                                                .primary;
+                                          } else if (FFAppState().band3color ==
+                                              'VIOLET') {
+                                            return const Color(0xFF8F00FF);
+                                          } else if (FFAppState().band3color ==
+                                              'WHITE') {
+                                            return FlutterFlowTheme.of(context)
+                                                .info;
+                                          } else if (FFAppState().band3color ==
+                                              'GREY') {
+                                            return FlutterFlowTheme.of(context)
+                                                .secondaryText;
+                                          } else {
+                                            return const Color(0x00000000);
+                                          }
+                                        }(),
+                                        borderRadius: const BorderRadius.only(
+                                          bottomLeft: Radius.circular(0.0),
+                                          bottomRight: Radius.circular(0.0),
+                                          topLeft: Radius.circular(0.0),
+                                          topRight: Radius.circular(0.0),
+                                        ),
+                                        shape: BoxShape.rectangle,
                                       ),
-                                      shape: BoxShape.rectangle,
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                     ),
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                   ),
                                 ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(-0.03, -1.15),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 72.0, 9.0, 0.0),
-                                  child: Container(
-                                    width: 10.0,
-                                    height: 46.0,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).warning,
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(0.0),
-                                        bottomRight: Radius.circular(0.0),
-                                        topLeft: Radius.circular(0.0),
-                                        topRight: Radius.circular(0.0),
+                              if (_model.textController.text != '')
+                                Align(
+                                  alignment: const AlignmentDirectional(-0.03, -1.15),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 72.0, 9.0, 0.0),
+                                    child: Container(
+                                      width: 10.0,
+                                      height: 46.0,
+                                      decoration: BoxDecoration(
+                                        color: () {
+                                          if (FFAppState().multipliercolor ==
+                                              'BLACK') {
+                                            return Colors.black;
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'BROWN') {
+                                            return FlutterFlowTheme.of(context)
+                                                .accent3;
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'RED') {
+                                            return FlutterFlowTheme.of(context)
+                                                .error;
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'ORANGE') {
+                                            return FlutterFlowTheme.of(context)
+                                                .tertiary;
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'YELLOW') {
+                                            return FlutterFlowTheme.of(context)
+                                                .warning;
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'GREEN') {
+                                            return FlutterFlowTheme.of(context)
+                                                .success;
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'BLUE') {
+                                            return FlutterFlowTheme.of(context)
+                                                .primary;
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'VIOLET') {
+                                            return const Color(0xFF8F00FF);
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'GREY') {
+                                            return FlutterFlowTheme.of(context)
+                                                .secondaryText;
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'WHITE') {
+                                            return FlutterFlowTheme.of(context)
+                                                .info;
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'GOLD') {
+                                            return const Color(0xFFFFD700);
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'SILVER') {
+                                            return const Color(0xFFC0C0C0);
+                                          } else if (FFAppState()
+                                                  .multipliercolor ==
+                                              'PINK') {
+                                            return const Color(0xFFFA11E0);
+                                          } else {
+                                            return const Color(0x00000000);
+                                          }
+                                        }(),
+                                        borderRadius: const BorderRadius.only(
+                                          bottomLeft: Radius.circular(0.0),
+                                          bottomRight: Radius.circular(0.0),
+                                          topLeft: Radius.circular(0.0),
+                                          topRight: Radius.circular(0.0),
+                                        ),
+                                        shape: BoxShape.rectangle,
                                       ),
-                                      shape: BoxShape.rectangle,
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                     ),
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                   ),
                                 ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.26, -1.02),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 72.0, 20.0, 0.0),
-                                  child: Container(
-                                    width: 10.0,
-                                    height: 46.0,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).warning,
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(0.0),
-                                        bottomRight: Radius.circular(0.0),
-                                        topLeft: Radius.circular(0.0),
-                                        topRight: Radius.circular(0.0),
+                              if ((_model.textController.text != '') &&
+                                  ((_model.dropDownValue1 == 'FOUR') ||
+                                      (_model.dropDownValue1 == 'FIVE') ||
+                                      (_model.dropDownValue1 == 'SIX')))
+                                Align(
+                                  alignment: const AlignmentDirectional(0.26, -1.02),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 72.0, 20.0, 0.0),
+                                    child: Container(
+                                      width: 10.0,
+                                      height: 46.0,
+                                      decoration: BoxDecoration(
+                                        color: () {
+                                          if (_model.dropDownValue3 ==
+                                              '±0.05%') {
+                                            return FlutterFlowTheme.of(context)
+                                                .tertiary;
+                                          } else if (_model.dropDownValue3 ==
+                                              '±1%') {
+                                            return FlutterFlowTheme.of(context)
+                                                .accent3;
+                                          } else if (_model.dropDownValue3 ==
+                                              '±2%') {
+                                            return FlutterFlowTheme.of(context)
+                                                .error;
+                                          } else if (_model.dropDownValue3 ==
+                                              '±0.02%') {
+                                            return FlutterFlowTheme.of(context)
+                                                .warning;
+                                          } else if (_model.dropDownValue3 ==
+                                              '±0.5%') {
+                                            return FlutterFlowTheme.of(context)
+                                                .success;
+                                          } else if (_model.dropDownValue3 ==
+                                              '±0.25%') {
+                                            return FlutterFlowTheme.of(context)
+                                                .primary;
+                                          } else if (_model.dropDownValue3 ==
+                                              '±0.1%') {
+                                            return const Color(0xFF8F00FF);
+                                          } else if (_model.dropDownValue3 ==
+                                              '±0.01%') {
+                                            return FlutterFlowTheme.of(context)
+                                                .secondaryText;
+                                          } else if (_model.dropDownValue3 ==
+                                              '±5%') {
+                                            return const Color(0xFFFFD700);
+                                          } else if (_model.dropDownValue3 ==
+                                              '±10%') {
+                                            return const Color(0xFFC0C0C0);
+                                          } else {
+                                            return const Color(0x00000000);
+                                          }
+                                        }(),
+                                        borderRadius: const BorderRadius.only(
+                                          bottomLeft: Radius.circular(0.0),
+                                          bottomRight: Radius.circular(0.0),
+                                          topLeft: Radius.circular(0.0),
+                                          topRight: Radius.circular(0.0),
+                                        ),
+                                        shape: BoxShape.rectangle,
                                       ),
-                                      shape: BoxShape.rectangle,
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                     ),
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                   ),
                                 ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.36, -0.9),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 64.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 10.0,
-                                    height: 62.0,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).warning,
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(0.0),
-                                        bottomRight: Radius.circular(0.0),
-                                        topLeft: Radius.circular(0.0),
-                                        topRight: Radius.circular(0.0),
+                              if ((_model.textController.text != '') &&
+                                  (_model.dropDownValue1 == 'SIX'))
+                                Align(
+                                  alignment: const AlignmentDirectional(0.36, -0.9),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 64.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 10.0,
+                                      height: 62.0,
+                                      decoration: BoxDecoration(
+                                        color: () {
+                                          if (_model.dropDowntemoValue ==
+                                              '250ppm/°C') {
+                                            return Colors.black;
+                                          } else if (_model.dropDowntemoValue ==
+                                              '100ppm/°C') {
+                                            return FlutterFlowTheme.of(context)
+                                                .accent3;
+                                          } else if (_model.dropDowntemoValue ==
+                                              '50ppm/°C') {
+                                            return FlutterFlowTheme.of(context)
+                                                .error;
+                                          } else if (_model.dropDowntemoValue ==
+                                              '15ppm/°C') {
+                                            return FlutterFlowTheme.of(context)
+                                                .tertiary;
+                                          } else if (_model.dropDowntemoValue ==
+                                              '25ppm/°C') {
+                                            return FlutterFlowTheme.of(context)
+                                                .warning;
+                                          } else if (_model.dropDowntemoValue ==
+                                              '20ppm/°C') {
+                                            return FlutterFlowTheme.of(context)
+                                                .success;
+                                          } else if (_model.dropDowntemoValue ==
+                                              '10ppm/°C') {
+                                            return FlutterFlowTheme.of(context)
+                                                .primary;
+                                          } else if (_model.dropDowntemoValue ==
+                                              '5ppm/°C') {
+                                            return const Color(0xFF8F00FF);
+                                          } else if (_model.dropDowntemoValue ==
+                                              '1ppm/°C') {
+                                            return FlutterFlowTheme.of(context)
+                                                .secondaryText;
+                                          } else {
+                                            return const Color(0x00000000);
+                                          }
+                                        }(),
+                                        borderRadius: const BorderRadius.only(
+                                          bottomLeft: Radius.circular(0.0),
+                                          bottomRight: Radius.circular(0.0),
+                                          topLeft: Radius.circular(0.0),
+                                          topRight: Radius.circular(0.0),
+                                        ),
+                                        shape: BoxShape.rectangle,
                                       ),
-                                      shape: BoxShape.rectangle,
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                     ),
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                   ),
                                 ),
-                              ),
                               Align(
                                 alignment: const AlignmentDirectional(-0.03, -0.87),
                                 child: Padding(
@@ -355,7 +559,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                           alignment: const AlignmentDirectional(0.0, -1.0),
                           child: SizedBox(
                             width: 393.0,
-                            height: 160.0,
+                            height: 190.0,
                             child: Stack(
                               alignment: const AlignmentDirectional(0.0, 0.0),
                               children: [
@@ -368,7 +572,59 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                       stream: queryNmBANDSRecord(
                                         queryBuilder: (nmBANDSRecord) =>
                                             nmBANDSRecord.orderBy('numnum'),
-                                      ),
+                                      )..listen((snapshot) async {
+                                          List<NmBANDSRecord>
+                                              dropDownNmBANDSRecordList =
+                                              snapshot;
+                                          if (_model.dropDownPreviousSnapshot !=
+                                                  null &&
+                                              !const ListEquality(
+                                                      NmBANDSRecordDocumentEquality())
+                                                  .equals(
+                                                      dropDownNmBANDSRecordList,
+                                                      _model
+                                                          .dropDownPreviousSnapshot)) {
+                                            // updatingAppStates
+                                            setState(() {
+                                              FFAppState().band1color =
+                                                  functions.arg2color(
+                                                      double.tryParse(_model
+                                                          .textController.text),
+                                                      _model.dropDownValue1,
+                                                      _model.dropDownValue2,
+                                                      _model
+                                                          .dropDownValue3)![0];
+                                              FFAppState().band2color =
+                                                  functions.arg2color(
+                                                      double.tryParse(_model
+                                                          .textController.text),
+                                                      _model.dropDownValue1,
+                                                      _model.dropDownValue2,
+                                                      _model
+                                                          .dropDownValue3)![1];
+                                              FFAppState().multipliercolor =
+                                                  functions.arg2color(
+                                                      double.tryParse(_model
+                                                          .textController.text),
+                                                      _model.dropDownValue1,
+                                                      _model.dropDownValue2,
+                                                      _model
+                                                          .dropDownValue3)![2];
+                                              FFAppState().band3color =
+                                                  functions.arg2color(
+                                                      double.tryParse(_model
+                                                          .textController.text),
+                                                      _model.dropDownValue1,
+                                                      _model.dropDownValue2,
+                                                      _model
+                                                          .dropDownValue3)![3];
+                                            });
+
+                                            setState(() {});
+                                          }
+                                          _model.dropDownPreviousSnapshot =
+                                              snapshot;
+                                        }),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
@@ -461,6 +717,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                 '_model.textController',
                                                 const Duration(milliseconds: 2),
                                                 () async {
+                                                  // updatingAppStates
                                                   setState(() {
                                                     FFAppState().band1color =
                                                         functions.arg2color(
@@ -484,6 +741,28 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                                 .dropDownValue2,
                                                             _model
                                                                 .dropDownValue3)![1];
+                                                    FFAppState().multipliercolor =
+                                                        functions.arg2color(
+                                                            double.tryParse(_model
+                                                                .textController
+                                                                .text),
+                                                            _model
+                                                                .dropDownValue1,
+                                                            _model
+                                                                .dropDownValue2,
+                                                            _model
+                                                                .dropDownValue3)![2];
+                                                    FFAppState().band3color =
+                                                        functions.arg2color(
+                                                            double.tryParse(_model
+                                                                .textController
+                                                                .text),
+                                                            _model
+                                                                .dropDownValue1,
+                                                            _model
+                                                                .dropDownValue2,
+                                                            _model
+                                                                .dropDownValue3)![3];
                                                   });
                                                 },
                                               ),
@@ -572,8 +851,49 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                               _model.dropDownValue2 ??= 'Ω',
                                             ),
                                             options: const ['Ω', 'kΩ', 'MΩ', 'GΩ'],
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue2 = val),
+                                            onChanged: (val) async {
+                                              setState(() =>
+                                                  _model.dropDownValue2 =
+                                                      val); // updatingAppStates
+                                              setState(() {
+                                                FFAppState().band1color =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![0];
+                                                FFAppState().band2color =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![1];
+                                                FFAppState().multipliercolor =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![2];
+                                                FFAppState().band3color =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![3];
+                                              });
+                                            },
                                             width: 90.0,
                                             height: 50.0,
                                             textStyle:
@@ -609,177 +929,244 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                 ),
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 17.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Expanded(
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      50.0, 90.0, 2.5, 0.0),
-                                              child:
-                                                  FlutterFlowDropDown<String>(
-                                                controller: _model
-                                                        .dropDowntemoValueController ??=
-                                                    FormFieldController<String>(
-                                                        null),
-                                                options: const [
-                                                  '250ppm/°C',
-                                                  '100ppm/°C',
-                                                  '50ppm/°C',
-                                                  '15ppm/°C',
-                                                  '25ppm/°C',
-                                                  '20ppm/°C',
-                                                  '10ppm/°C',
-                                                  '5ppm/°C',
-                                                  '1ppm/°C'
-                                                ],
-                                                onChanged: (val) => setState(
-                                                    () => _model
-                                                            .dropDowntemoValue =
-                                                        val),
-                                                width: 150.0,
-                                                height: 35.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
-                                                hintText: _model
-                                                            .dropDownValue1 !=
-                                                        'SIX'
-                                                    ? 'N/A'
-                                                    : 'Temperature coefficient',
-                                                icon: Icon(
-                                                  Icons
-                                                      .keyboard_arrow_down_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 24.0,
-                                                ),
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                elevation: 2.0,
-                                                borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                borderWidth: 2.0,
-                                                borderRadius: 8.0,
-                                                margin: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                hidesUnderline: true,
-                                                disabled:
-                                                    _model.dropDownValue1 !=
-                                                        'SIX',
-                                                isOverButton: true,
-                                                isSearchable: false,
-                                                isMultiSelect: false,
-                                              ),
-                                            ),
-                                          ),
+                                if ((_model.dropDownValue1 == 'FOUR') ||
+                                    (_model.dropDownValue1 == 'FIVE') ||
+                                    (_model.dropDownValue1 == 'SIX'))
+                                  Align(
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          50.0, 55.0, 50.0, 0.0),
+                                      child: FlutterFlowDropDown<String>(
+                                        controller: _model
+                                                .dropDownValueController3 ??=
+                                            FormFieldController<String>(null),
+                                        options: const [
+                                          '±0.05%',
+                                          '±0.02%',
+                                          '±0.5%',
+                                          '±0.25%',
+                                          '±0.1%',
+                                          '±0.01%',
+                                          '±5%',
+                                          '±10%',
+                                          '±20%'
+                                        ],
+                                        onChanged: (val) async {
+                                          setState(() => _model.dropDownValue3 =
+                                              val); // updatingAppStates
+                                          setState(() {
+                                            FFAppState().band1color =
+                                                functions.arg2color(
+                                                    double.tryParse(_model
+                                                        .textController.text),
+                                                    _model.dropDownValue1,
+                                                    _model.dropDownValue2,
+                                                    _model.dropDownValue3)![0];
+                                            FFAppState().band2color =
+                                                functions.arg2color(
+                                                    double.tryParse(_model
+                                                        .textController.text),
+                                                    _model.dropDownValue1,
+                                                    _model.dropDownValue2,
+                                                    _model.dropDownValue3)![1];
+                                            FFAppState().multipliercolor =
+                                                functions.arg2color(
+                                                    double.tryParse(_model
+                                                        .textController.text),
+                                                    _model.dropDownValue1,
+                                                    _model.dropDownValue2,
+                                                    _model.dropDownValue3)![2];
+                                            FFAppState().band3color =
+                                                functions.arg2color(
+                                                    double.tryParse(_model
+                                                        .textController.text),
+                                                    _model.dropDownValue1,
+                                                    _model.dropDownValue2,
+                                                    _model.dropDownValue3)![3];
+                                          });
+                                        },
+                                        width: 290.0,
+                                        height: 35.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
+                                        hintText:
+                                            _model.dropDownValue1 == 'THREE'
+                                                ? 'N/A'
+                                                : 'Tolerance',
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
                                         ),
-                                        Expanded(
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      2.5, 90.0, 50.0, 0.0),
-                                              child:
-                                                  FlutterFlowDropDown<String>(
-                                                controller: _model
-                                                        .dropDownValueController3 ??=
-                                                    FormFieldController<String>(
-                                                        null),
-                                                options: const [
-                                                  '±0.05%',
-                                                  '±0.02%',
-                                                  '±0.5%',
-                                                  '±0.25%',
-                                                  '±0.1%',
-                                                  '±0.01%',
-                                                  '±5%',
-                                                  '±10%',
-                                                  '±20%'
-                                                ],
-                                                onChanged: (val) => setState(
-                                                    () => _model
-                                                        .dropDownValue3 = val),
-                                                width: 150.0,
-                                                height: 35.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
-                                                hintText:
-                                                    _model.dropDownValue1 ==
-                                                            'THREE'
-                                                        ? 'N/A'
-                                                        : 'Tolerance',
-                                                icon: Icon(
-                                                  Icons
-                                                      .keyboard_arrow_down_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 24.0,
-                                                ),
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                elevation: 2.0,
-                                                borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                borderWidth: 2.0,
-                                                borderRadius: 8.0,
-                                                margin: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                hidesUnderline: true,
-                                                disabled:
-                                                    _model.dropDownValue1 ==
-                                                        'THREE',
-                                                isOverButton: true,
-                                                isSearchable: false,
-                                                isMultiSelect: false,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        elevation: 2.0,
+                                        borderColor:
+                                            FlutterFlowTheme.of(context)
+                                                .alternate,
+                                        borderWidth: 2.0,
+                                        borderRadius: 8.0,
+                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 16.0, 0.0),
+                                        hidesUnderline: true,
+                                        disabled:
+                                            _model.dropDownValue1 == 'THREE',
+                                        isOverButton: true,
+                                        isSearchable: false,
+                                        isMultiSelect: false,
+                                      ),
                                     ),
                                   ),
-                                ),
+                                if (_model.dropDownValue1 == 'SIX')
+                                  Align(
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          50.0, 140.0, 50.0, 0.0),
+                                      child: FlutterFlowDropDown<String>(
+                                        controller: _model
+                                                .dropDowntemoValueController ??=
+                                            FormFieldController<String>(null),
+                                        options: const [
+                                          '250ppm/°C',
+                                          '100ppm/°C',
+                                          '50ppm/°C',
+                                          '15ppm/°C',
+                                          '25ppm/°C',
+                                          '20ppm/°C',
+                                          '10ppm/°C',
+                                          '5ppm/°C',
+                                          '1ppm/°C'
+                                        ],
+                                        onChanged: (val) async {
+                                          setState(() =>
+                                              _model.dropDowntemoValue =
+                                                  val); // updatingAppStates
+                                          setState(() {
+                                            FFAppState().band1color =
+                                                functions.arg2color(
+                                                    double.tryParse(_model
+                                                        .textController.text),
+                                                    _model.dropDownValue1,
+                                                    _model.dropDownValue2,
+                                                    _model.dropDownValue3)![0];
+                                            FFAppState().band2color =
+                                                functions.arg2color(
+                                                    double.tryParse(_model
+                                                        .textController.text),
+                                                    _model.dropDownValue1,
+                                                    _model.dropDownValue2,
+                                                    _model.dropDownValue3)![1];
+                                            FFAppState().multipliercolor =
+                                                functions.arg2color(
+                                                    double.tryParse(_model
+                                                        .textController.text),
+                                                    _model.dropDownValue1,
+                                                    _model.dropDownValue2,
+                                                    _model.dropDownValue3)![2];
+                                            FFAppState().band3color =
+                                                functions.arg2color(
+                                                    double.tryParse(_model
+                                                        .textController.text),
+                                                    _model.dropDownValue1,
+                                                    _model.dropDownValue2,
+                                                    _model.dropDownValue3)![3];
+                                          });
+                                        },
+                                        width: 290.0,
+                                        height: 35.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
+                                        hintText: 'Temperature Coefficient',
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        elevation: 2.0,
+                                        borderColor:
+                                            FlutterFlowTheme.of(context)
+                                                .alternate,
+                                        borderWidth: 2.0,
+                                        borderRadius: 8.0,
+                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 16.0, 0.0),
+                                        hidesUnderline: true,
+                                        disabled:
+                                            _model.dropDownValue1 != 'SIX',
+                                        isOverButton: true,
+                                        isSearchable: false,
+                                        isMultiSelect: false,
+                                      ),
+                                    ),
+                                  ),
                               ],
                             ),
                           ),
                         ),
                       ),
-                      if (false)
-                        const Align(
-                          alignment: AlignmentDirectional(0.0, 1.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 5.0),
-                            child: FlutterFlowAdBanner(
-                              showsTestAd: true,
-                              androidAdUnitID:
-                                  'ca-app-pub-2953271805200465/1205425363',
-                            ),
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        child: SizedBox(
+                          width: 393.0,
+                          height: 100.0,
+                          child: Stack(
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Text(
+                                  _model.textController.text == ''
+                                      ? 'Please Enter the Resistance Value'
+                                      : 'mommie',
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ).animateOnPageLoad(
+                                    animationsMap['textOnPageLoadAnimation1']!),
+                              ),
+                            ],
                           ),
                         ),
+                      ),
+                      Text(
+                        () {
+                          if (FFAppState().band1color != '') {
+                            return _model.textController.text;
+                          } else if (FFAppState().band2color != '') {
+                            return _model.textController.text;
+                          } else if (FFAppState().band3color != '') {
+                            return _model.textController.text;
+                          } else if (FFAppState().multipliercolor != '') {
+                            return _model.textController.text;
+                          } else {
+                            return 'fuckkkkk';
+                          }
+                        }(),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      ),
+                      Text(
+                        FFAppState().band3color,
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 80.0),
+                        child: Text(
+                          valueOrDefault<String>(
+                            functions.value2colour(
+                                double.tryParse(_model.textController.text),
+                                _model.dropDownValue1,
+                                _model.dropDownValue2,
+                                _model.dropDownValue3),
+                            'NULL',
+                          ),
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -825,7 +1212,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                     fontSize: 50.0,
                                   ),
                             ).animateOnPageLoad(
-                                animationsMap['textOnPageLoadAnimation']!),
+                                animationsMap['textOnPageLoadAnimation2']!),
                           ),
                         ),
                         Align(

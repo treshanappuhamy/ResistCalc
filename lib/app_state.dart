@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '/backend/backend.dart';
-import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -51,26 +49,16 @@ class FFAppState extends ChangeNotifier {
   set band2color(String value) {
     _band2color = value;
   }
-}
 
-LatLng? _latLngFromString(String? val) {
-  if (val == null) {
-    return null;
+  String _band3color = '';
+  String get band3color => _band3color;
+  set band3color(String value) {
+    _band3color = value;
   }
-  final split = val.split(',');
-  final lat = double.parse(split.first);
-  final lng = double.parse(split.last);
-  return LatLng(lat, lng);
-}
 
-void _safeInit(Function() initializeField) {
-  try {
-    initializeField();
-  } catch (_) {}
-}
-
-Future _safeInitAsync(Function() initializeField) async {
-  try {
-    await initializeField();
-  } catch (_) {}
+  String _multipliercolor = '';
+  String get multipliercolor => _multipliercolor;
+  set multipliercolor(String value) {
+    _multipliercolor = value;
+  }
 }
