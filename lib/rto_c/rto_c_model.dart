@@ -1,4 +1,3 @@
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'rto_c_widget.dart' show RtoCWidget;
@@ -11,7 +10,6 @@ class RtoCModel extends FlutterFlowModel<RtoCWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
-  List<NmBANDSRecord>? dropDownPreviousSnapshot;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
