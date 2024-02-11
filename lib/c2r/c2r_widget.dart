@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/components/aboutapp_widget.dart';
+import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -8,27 +9,25 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'threeband_model.dart';
-export 'threeband_model.dart';
+import 'c2r_model.dart';
+export 'c2r_model.dart';
 
-class ThreebandWidget extends StatefulWidget {
-  const ThreebandWidget({super.key});
+class C2rWidget extends StatefulWidget {
+  const C2rWidget({super.key});
 
   @override
-  State<ThreebandWidget> createState() => _ThreebandWidgetState();
+  State<C2rWidget> createState() => _C2rWidgetState();
 }
 
-class _ThreebandWidgetState extends State<ThreebandWidget> {
-  late ThreebandModel _model;
+class _C2rWidgetState extends State<C2rWidget> {
+  late C2rModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ThreebandModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    _model = createModel(context, () => C2rModel());
   }
 
   @override
@@ -113,53 +112,54 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                 height: 62.0,
                                                 decoration: BoxDecoration(
                                                   color: () {
-                                                    if (_model.dropDownValue1 ==
+                                                    if (_model
+                                                            .dropDownband1Value ==
                                                         'GREY') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryText;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'BROWN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .accent3;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'RED') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .error;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'ORANGE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .tertiary;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'YELLOW') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .warning;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'GREEN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .success;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'BLUE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .primary;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'VIOLET') {
                                                       return const Color(0xFF8F00FF);
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'WHITE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
@@ -198,57 +198,58 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                 height: 46.0,
                                                 decoration: BoxDecoration(
                                                   color: () {
-                                                    if (_model.dropDownValue2 ==
+                                                    if (_model
+                                                            .dropDownband2Value ==
                                                         'BLACK') {
                                                       return Colors.black;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'BROWN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .accent3;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'RED') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .error;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'ORANGE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .tertiary;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'YELLOW') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .warning;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'GREEN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .success;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'BLUE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .primary;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'VIOLET') {
                                                       return const Color(0xFF8F00FF);
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'GREY') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryText;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'WHITE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
@@ -275,95 +276,103 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                               ),
                                             ),
                                           ),
-                                          Align(
-                                            alignment: const AlignmentDirectional(
-                                                -0.11, -1.15),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 72.0, 9.0, 0.0),
-                                              child: Container(
-                                                width: 10.0,
-                                                height: 46.0,
-                                                decoration: BoxDecoration(
-                                                  color: () {
-                                                    if (_model.dropDownValue3 ==
-                                                        'BLACK') {
-                                                      return Colors.black;
-                                                    } else if (_model
-                                                            .dropDownValue3 ==
-                                                        'BROWN') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .accent3;
-                                                    } else if (_model
-                                                            .dropDownValue3 ==
-                                                        'RED') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .error;
-                                                    } else if (_model
-                                                            .dropDownValue3 ==
-                                                        'ORANGE') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .tertiary;
-                                                    } else if (_model
-                                                            .dropDownValue3 ==
-                                                        'YELLOW') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .warning;
-                                                    } else if (_model
-                                                            .dropDownValue3 ==
-                                                        'GREEN') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .success;
-                                                    } else if (_model
-                                                            .dropDownValue3 ==
-                                                        'BLUE') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .primary;
-                                                    } else if (_model
-                                                            .dropDownValue3 ==
-                                                        'VIOLET') {
-                                                      return const Color(0xFF8F00FF);
-                                                    } else if (_model
-                                                            .dropDownValue3 ==
-                                                        'WHITE') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .info;
-                                                    } else if (_model
-                                                            .dropDownValue3 ==
-                                                        'GREY') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryText;
-                                                    } else {
-                                                      return const Color(0x00000000);
-                                                    }
-                                                  }(),
-                                                  borderRadius:
-                                                      const BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(0.0),
-                                                    bottomRight:
-                                                        Radius.circular(0.0),
-                                                    topLeft:
-                                                        Radius.circular(0.0),
-                                                    topRight:
-                                                        Radius.circular(0.0),
+                                          if ((_model.dropDownNumbandValue ==
+                                                  'FIVE') ||
+                                              (_model.dropDownNumbandValue ==
+                                                  'SIX'))
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  -0.11, -1.15),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 72.0, 9.0, 0.0),
+                                                child: Container(
+                                                  width: 10.0,
+                                                  height: 46.0,
+                                                  decoration: BoxDecoration(
+                                                    color: () {
+                                                      if (_model
+                                                              .dropDownband3Value ==
+                                                          'BLACK') {
+                                                        return Colors.black;
+                                                      } else if (_model
+                                                              .dropDownband3Value ==
+                                                          'BROWN') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .accent3;
+                                                      } else if (_model
+                                                              .dropDownband3Value ==
+                                                          'RED') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .error;
+                                                      } else if (_model
+                                                              .dropDownband3Value ==
+                                                          'ORANGE') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .tertiary;
+                                                      } else if (_model
+                                                              .dropDownband3Value ==
+                                                          'YELLOW') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .warning;
+                                                      } else if (_model
+                                                              .dropDownband3Value ==
+                                                          'GREEN') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .success;
+                                                      } else if (_model
+                                                              .dropDownband3Value ==
+                                                          'BLUE') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .primary;
+                                                      } else if (_model
+                                                              .dropDownband3Value ==
+                                                          'VIOLET') {
+                                                        return const Color(
+                                                            0xFF8F00FF);
+                                                      } else if (_model
+                                                              .dropDownband3Value ==
+                                                          'WHITE') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .info;
+                                                      } else if (_model
+                                                              .dropDownband3Value ==
+                                                          'GREY') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryText;
+                                                      } else {
+                                                        return const Color(
+                                                            0x00000000);
+                                                      }
+                                                    }(),
+                                                    borderRadius:
+                                                        const BorderRadius.only(
+                                                      bottomLeft:
+                                                          Radius.circular(0.0),
+                                                      bottomRight:
+                                                          Radius.circular(0.0),
+                                                      topLeft:
+                                                          Radius.circular(0.0),
+                                                      topRight:
+                                                          Radius.circular(0.0),
+                                                    ),
+                                                    shape: BoxShape.rectangle,
                                                   ),
-                                                  shape: BoxShape.rectangle,
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
                                                 ),
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
                                               ),
                                             ),
-                                          ),
                                           Align(
                                             alignment: const AlignmentDirectional(
                                                 -0.03, -1.15),
@@ -376,71 +385,72 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                 height: 46.0,
                                                 decoration: BoxDecoration(
                                                   color: () {
-                                                    if (_model.dropDownValue4 ==
+                                                    if (_model
+                                                            .dropDownMultiplierValue ==
                                                         'BLACK') {
                                                       return Colors.black;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'BROWN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .accent3;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'RED') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .error;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'ORANGE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .tertiary;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'YELLOW') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .warning;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'GREEN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .success;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'BLUE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .primary;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'VIOLET') {
                                                       return const Color(0xFF8F00FF);
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownMultiplierValue ==
                                                         'GREY') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryText;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'WHITE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .info;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'GOLD') {
                                                       return const Color(0xFFFFD700);
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'SILVER') {
                                                       return const Color(0xFFC0C0C0);
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'PINK') {
                                                       return const Color(0xFFFA11E0);
                                                     } else {
@@ -465,183 +475,201 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                               ),
                                             ),
                                           ),
-                                          Align(
-                                            alignment: const AlignmentDirectional(
-                                                0.26, -1.02),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 72.0, 20.0, 0.0),
-                                              child: Container(
-                                                width: 10.0,
-                                                height: 46.0,
-                                                decoration: BoxDecoration(
-                                                  color: () {
-                                                    if (_model.dropDownValue5 ==
-                                                        'ORANGE') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .tertiary;
-                                                    } else if (_model
-                                                            .dropDownValue5 ==
-                                                        'BROWN') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .accent3;
-                                                    } else if (_model
-                                                            .dropDownValue5 ==
-                                                        'RED') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .error;
-                                                    } else if (_model
-                                                            .dropDownValue5 ==
-                                                        'YELLOW') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .warning;
-                                                    } else if (_model
-                                                            .dropDownValue5 ==
-                                                        'GREEN') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .success;
-                                                    } else if (_model
-                                                            .dropDownValue5 ==
-                                                        'BLUE') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .primary;
-                                                    } else if (_model
-                                                            .dropDownValue5 ==
-                                                        'VIOLET') {
-                                                      return const Color(0xFF8F00FF);
-                                                    } else if (_model
-                                                            .dropDownValue5 ==
-                                                        'GREY') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryText;
-                                                    } else if (_model
-                                                            .dropDownValue5 ==
-                                                        'GOLD') {
-                                                      return const Color(0xFFFFD700);
-                                                    } else if (_model
-                                                            .dropDownValue5 ==
-                                                        'SILVER') {
-                                                      return const Color(0xFFC0C0C0);
-                                                    } else {
-                                                      return const Color(0x00000000);
-                                                    }
-                                                  }(),
-                                                  borderRadius:
-                                                      const BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(0.0),
-                                                    bottomRight:
-                                                        Radius.circular(0.0),
-                                                    topLeft:
-                                                        Radius.circular(0.0),
-                                                    topRight:
-                                                        Radius.circular(0.0),
-                                                  ),
-                                                  shape: BoxShape.rectangle,
-                                                ),
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                              ),
-                                            ),
-                                          ),
-                                          Align(
-                                            alignment: const AlignmentDirectional(
-                                                0.36, -0.9),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 64.0, 0.0, 0.0),
-                                              child: Container(
-                                                width: 10.0,
-                                                height: 62.0,
-                                                decoration: BoxDecoration(
-                                                  color: () {
-                                                    if (_model.dropDownValue6 ==
-                                                        'BLACK') {
-                                                      return Colors.black;
-                                                    } else if (_model
-                                                            .dropDownValue6 ==
-                                                        'BROWN') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .accent3;
-                                                    } else if (_model
-                                                            .dropDownValue6 ==
-                                                        'RED') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .error;
-                                                    } else if (_model
-                                                            .dropDownValue6 ==
-                                                        'ORANGE') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .tertiary;
-                                                    } else if (_model
-                                                            .dropDownValue6 ==
-                                                        'YELLOW') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .warning;
-                                                    } else if (_model
-                                                            .dropDownValue6 ==
-                                                        'GREEN') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .success;
-                                                    } else if (_model
-                                                            .dropDownValue6 ==
-                                                        'BLUE') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .primary;
-                                                    } else if (_model
-                                                            .dropDownValue6 ==
-                                                        'VIOLET') {
-                                                      return const Color(0xFF8F00FF);
-                                                    } else if (_model
-                                                            .dropDownValue6 ==
-                                                        'GREY') {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryText;
-                                                    } else {
-                                                      return const Color(0x00000000);
-                                                    }
-                                                  }(),
-                                                  borderRadius:
-                                                      const BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(0.0),
-                                                    bottomRight:
-                                                        Radius.circular(0.0),
-                                                    topLeft:
-                                                        Radius.circular(0.0),
-                                                    topRight:
-                                                        Radius.circular(0.0),
-                                                  ),
-                                                  shape: BoxShape.rectangle,
-                                                ),
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                              ),
-                                            ),
-                                          ),
-                                          if ((_model.dropDownValue7 ==
-                                                  'THREE') ||
-                                              (_model.dropDownValue7 ==
-                                                  'FOUR') ||
-                                              (_model.dropDownValue7 ==
+                                          if ((_model.dropDownNumbandValue == 'FOUR') ||
+                                              (_model.dropDownNumbandValue ==
                                                   'FIVE') ||
-                                              (_model.dropDownValue7 == 'SIX'))
+                                              (_model.dropDownNumbandValue ==
+                                                  'SIX'))
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  0.26, -1.02),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 72.0, 20.0, 0.0),
+                                                child: Container(
+                                                  width: 10.0,
+                                                  height: 46.0,
+                                                  decoration: BoxDecoration(
+                                                    color: () {
+                                                      if (_model
+                                                              .dropDownToleranceValue ==
+                                                          'ORANGE') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .tertiary;
+                                                      } else if (_model
+                                                              .dropDownToleranceValue ==
+                                                          'BROWN') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .accent3;
+                                                      } else if (_model
+                                                              .dropDownToleranceValue ==
+                                                          'RED') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .error;
+                                                      } else if (_model
+                                                              .dropDownToleranceValue ==
+                                                          'YELLOW') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .warning;
+                                                      } else if (_model
+                                                              .dropDownToleranceValue ==
+                                                          'GREEN') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .success;
+                                                      } else if (_model
+                                                              .dropDownToleranceValue ==
+                                                          'BLUE') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .primary;
+                                                      } else if (_model
+                                                              .dropDownToleranceValue ==
+                                                          'VIOLET') {
+                                                        return const Color(
+                                                            0xFF8F00FF);
+                                                      } else if (_model
+                                                              .dropDownToleranceValue ==
+                                                          'GREY') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryText;
+                                                      } else if (_model
+                                                              .dropDownToleranceValue ==
+                                                          'GOLD') {
+                                                        return const Color(
+                                                            0xFFFFD700);
+                                                      } else if (_model
+                                                              .dropDownToleranceValue ==
+                                                          'SILVER') {
+                                                        return const Color(
+                                                            0xFFC0C0C0);
+                                                      } else {
+                                                        return const Color(
+                                                            0x00000000);
+                                                      }
+                                                    }(),
+                                                    borderRadius:
+                                                        const BorderRadius.only(
+                                                      bottomLeft:
+                                                          Radius.circular(0.0),
+                                                      bottomRight:
+                                                          Radius.circular(0.0),
+                                                      topLeft:
+                                                          Radius.circular(0.0),
+                                                      topRight:
+                                                          Radius.circular(0.0),
+                                                    ),
+                                                    shape: BoxShape.rectangle,
+                                                  ),
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.dropDownNumbandValue ==
+                                              'SIX')
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  0.36, -0.9),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 64.0, 0.0, 0.0),
+                                                child: Container(
+                                                  width: 10.0,
+                                                  height: 62.0,
+                                                  decoration: BoxDecoration(
+                                                    color: () {
+                                                      if (_model
+                                                              .dropDownTempCoeffValue ==
+                                                          'BLACK') {
+                                                        return Colors.black;
+                                                      } else if (_model
+                                                              .dropDownTempCoeffValue ==
+                                                          'BROWN') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .accent3;
+                                                      } else if (_model
+                                                              .dropDownTempCoeffValue ==
+                                                          'RED') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .error;
+                                                      } else if (_model
+                                                              .dropDownTempCoeffValue ==
+                                                          'ORANGE') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .tertiary;
+                                                      } else if (_model
+                                                              .dropDownTempCoeffValue ==
+                                                          'YELLOW') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .warning;
+                                                      } else if (_model
+                                                              .dropDownTempCoeffValue ==
+                                                          'GREEN') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .success;
+                                                      } else if (_model
+                                                              .dropDownTempCoeffValue ==
+                                                          'BLUE') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .primary;
+                                                      } else if (_model
+                                                              .dropDownTempCoeffValue ==
+                                                          'VIOLET') {
+                                                        return const Color(
+                                                            0xFF8F00FF);
+                                                      } else if (_model
+                                                              .dropDownTempCoeffValue ==
+                                                          'GREY') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryText;
+                                                      } else {
+                                                        return const Color(
+                                                            0x00000000);
+                                                      }
+                                                    }(),
+                                                    borderRadius:
+                                                        const BorderRadius.only(
+                                                      bottomLeft:
+                                                          Radius.circular(0.0),
+                                                      bottomRight:
+                                                          Radius.circular(0.0),
+                                                      topLeft:
+                                                          Radius.circular(0.0),
+                                                      topRight:
+                                                          Radius.circular(0.0),
+                                                    ),
+                                                    shape: BoxShape.rectangle,
+                                                  ),
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                ),
+                                              ),
+                                            ),
+                                          if ((_model.dropDownNumbandValue ==
+                                                  'THREE') ||
+                                              (_model.dropDownNumbandValue ==
+                                                  'FOUR') ||
+                                              (_model.dropDownNumbandValue ==
+                                                  'FIVE') ||
+                                              (_model.dropDownNumbandValue ==
+                                                  'SIX'))
                                             Align(
                                               alignment: const AlignmentDirectional(
                                                   0.0, 0.55),
@@ -666,15 +694,15 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                             functions
                                                                 .cal(
                                                                     _model
-                                                                        .dropDownValue1,
+                                                                        .dropDownband1Value,
                                                                     _model
-                                                                        .dropDownValue2,
+                                                                        .dropDownband2Value,
                                                                     _model
-                                                                        .dropDownValue3,
+                                                                        .dropDownband3Value,
                                                                     _model
-                                                                        .dropDownValue4,
+                                                                        .dropDownMultiplierValue,
                                                                     _model
-                                                                        .dropDownValue7)
+                                                                        .dropDownNumbandValue)
                                                                 ?.toString(),
                                                             '0',
                                                           ),
@@ -697,9 +725,9 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                               String>(
                                                             functions.symbolcal(
                                                                 _model
-                                                                    .dropDownValue4,
+                                                                    .dropDownMultiplierValue,
                                                                 _model
-                                                                    .dropDownValue7),
+                                                                    .dropDownNumbandValue),
                                                             '0',
                                                           ),
                                                           style: FlutterFlowTheme
@@ -736,9 +764,9 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                           functions
                                                               .tolerance(
                                                                   _model
-                                                                      .dropDownValue7,
+                                                                      .dropDownNumbandValue,
                                                                   _model
-                                                                      .dropDownValue5)
+                                                                      .dropDownToleranceValue)
                                                               .toString(),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -766,10 +794,12 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                               ),
                                                         ),
                                                       ),
-                                                      if (_model.dropDownValue6 !=
-                                                              null &&
-                                                          _model.dropDownValue6 !=
-                                                              '')
+                                                      if ((_model.dropDownTempCoeffValue !=
+                                                                  null &&
+                                                              _model.dropDownTempCoeffValue !=
+                                                                  '') &&
+                                                          (_model.dropDownNumbandValue ==
+                                                              'SIX'))
                                                         StreamBuilder<
                                                             List<
                                                                 TempCoeffRecord>>(
@@ -803,39 +833,39 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                             return Text(
                                                               () {
                                                                 if (_model
-                                                                        .dropDownValue6 ==
+                                                                        .dropDownTempCoeffValue ==
                                                                     'BLACK') {
                                                                   return ' @250ppm/°C';
                                                                 } else if (_model
-                                                                        .dropDownValue6 ==
+                                                                        .dropDownTempCoeffValue ==
                                                                     'BROWN') {
                                                                   return ' @100ppm/°C';
                                                                 } else if (_model
-                                                                        .dropDownValue6 ==
+                                                                        .dropDownTempCoeffValue ==
                                                                     'RED') {
                                                                   return ' @50ppm/°C';
                                                                 } else if (_model
-                                                                        .dropDownValue6 ==
+                                                                        .dropDownTempCoeffValue ==
                                                                     'ORANGE') {
                                                                   return ' @15ppm/°C';
                                                                 } else if (_model
-                                                                        .dropDownValue6 ==
+                                                                        .dropDownTempCoeffValue ==
                                                                     'YELLOW') {
                                                                   return ' @25ppm/°C';
                                                                 } else if (_model
-                                                                        .dropDownValue6 ==
+                                                                        .dropDownTempCoeffValue ==
                                                                     'GREEN') {
                                                                   return ' @20ppm/°C';
                                                                 } else if (_model
-                                                                        .dropDownValue6 ==
+                                                                        .dropDownTempCoeffValue ==
                                                                     'BLUE') {
                                                                   return ' @10ppm/°C';
                                                                 } else if (_model
-                                                                        .dropDownValue6 ==
+                                                                        .dropDownTempCoeffValue ==
                                                                     'VIOLET') {
                                                                   return ' @5ppm/°C';
                                                                 } else if (_model
-                                                                        .dropDownValue6 ==
+                                                                        .dropDownTempCoeffValue ==
                                                                     'GREY') {
                                                                   return ' @1ppm/°C';
                                                                 } else {
@@ -883,10 +913,25 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                       ),
                                     ),
                                   ),
-                                  if ((_model.dropDownValue7 == 'THREE') ||
-                                      (_model.dropDownValue7 == 'FOUR') ||
-                                      (_model.dropDownValue7 == 'FIVE') ||
-                                      (_model.dropDownValue7 == 'SIX'))
+                                  Align(
+                                    alignment: const AlignmentDirectional(0.0, 1.44),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 10.0),
+                                      child: FlutterFlowAdBanner(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
+                                        height: 50.0,
+                                        showsTestAd: true,
+                                      ),
+                                    ),
+                                  ),
+                                  if ((_model.dropDownNumbandValue ==
+                                          'THREE') ||
+                                      (_model.dropDownNumbandValue == 'FOUR') ||
+                                      (_model.dropDownNumbandValue == 'FIVE') ||
+                                      (_model.dropDownNumbandValue == 'SIX'))
                                     SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -904,53 +949,54 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                 height: 35.0,
                                                 decoration: BoxDecoration(
                                                   color: () {
-                                                    if (_model.dropDownValue1 ==
+                                                    if (_model
+                                                            .dropDownband1Value ==
                                                         'GREY') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryText;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'BROWN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .accent3;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'RED') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .error;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'ORANGE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .tertiary;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'YELLOW') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .warning;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'GREEN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .success;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'BLUE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .primary;
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'VIOLET') {
                                                       return const Color(0xFF8F00FF);
                                                     } else if (_model
-                                                            .dropDownValue1 ==
+                                                            .dropDownband1Value ==
                                                         'WHITE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
@@ -1000,16 +1046,16 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                   );
                                                 }
                                                 List<ThreeBandRecord>
-                                                    dropDownThreeBandRecordList =
+                                                    dropDownband1ThreeBandRecordList =
                                                     snapshot.data!;
                                                 return FlutterFlowDropDown<
                                                     String>(
                                                   controller: _model
-                                                          .dropDownValueController1 ??=
+                                                          .dropDownband1ValueController ??=
                                                       FormFieldController<
                                                           String>(null),
                                                   options:
-                                                      dropDownThreeBandRecordList
+                                                      dropDownband1ThreeBandRecordList
                                                           .map((e) =>
                                                               valueOrDefault<
                                                                   String>(
@@ -1019,7 +1065,7 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                           .toList(),
                                                   onChanged: (val) => setState(
                                                       () => _model
-                                                              .dropDownValue1 =
+                                                              .dropDownband1Value =
                                                           val),
                                                   width: 150.0,
                                                   height: 35.0,
@@ -1061,10 +1107,11 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                         ],
                                       ),
                                     ),
-                                  if ((_model.dropDownValue7 == 'THREE') ||
-                                      (_model.dropDownValue7 == 'FOUR') ||
-                                      (_model.dropDownValue7 == 'FIVE') ||
-                                      (_model.dropDownValue7 == 'SIX'))
+                                  if ((_model.dropDownNumbandValue ==
+                                          'THREE') ||
+                                      (_model.dropDownNumbandValue == 'FOUR') ||
+                                      (_model.dropDownNumbandValue == 'FIVE') ||
+                                      (_model.dropDownNumbandValue == 'SIX'))
                                     SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -1082,57 +1129,58 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                 height: 35.0,
                                                 decoration: BoxDecoration(
                                                   color: () {
-                                                    if (_model.dropDownValue2 ==
+                                                    if (_model
+                                                            .dropDownband2Value ==
                                                         'BLACK') {
                                                       return Colors.black;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'BROWN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .accent3;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'RED') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .error;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'ORANGE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .tertiary;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'YELLOW') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .warning;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'GREEN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .success;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'BLUE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .primary;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'VIOLET') {
                                                       return const Color(0xFF8F00FF);
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'GREY') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryText;
                                                     } else if (_model
-                                                            .dropDownValue2 ==
+                                                            .dropDownband2Value ==
                                                         'WHITE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
@@ -1154,13 +1202,14 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                               ),
                                             ),
                                           ),
-                                          if ((_model.dropDownValue7 ==
+                                          if ((_model.dropDownNumbandValue ==
                                                   'THREE') ||
-                                              (_model.dropDownValue7 ==
+                                              (_model.dropDownNumbandValue ==
                                                   'FOUR') ||
-                                              (_model.dropDownValue7 ==
+                                              (_model.dropDownNumbandValue ==
                                                   'FIVE') ||
-                                              (_model.dropDownValue7 == 'SIX'))
+                                              (_model.dropDownNumbandValue ==
+                                                  'SIX'))
                                             Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -1189,22 +1238,22 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                     );
                                                   }
                                                   List<ThreeBand2Record>
-                                                      dropDownThreeBand2RecordList =
+                                                      dropDownband2ThreeBand2RecordList =
                                                       snapshot.data!;
                                                   return FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownValueController2 ??=
+                                                            .dropDownband2ValueController ??=
                                                         FormFieldController<
                                                             String>(null),
                                                     options:
-                                                        dropDownThreeBand2RecordList
+                                                        dropDownband2ThreeBand2RecordList
                                                             .map(
                                                                 (e) => e.output)
                                                             .toList(),
                                                     onChanged: (val) =>
                                                         setState(() => _model
-                                                                .dropDownValue2 =
+                                                                .dropDownband2Value =
                                                             val),
                                                     width: 150.0,
                                                     height: 35.0,
@@ -1247,8 +1296,8 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                         ],
                                       ),
                                     ),
-                                  if ((_model.dropDownValue7 == 'FIVE') ||
-                                      (_model.dropDownValue7 == 'SIX'))
+                                  if ((_model.dropDownNumbandValue == 'FIVE') ||
+                                      (_model.dropDownNumbandValue == 'SIX'))
                                     SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -1266,57 +1315,58 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                 height: 35.0,
                                                 decoration: BoxDecoration(
                                                   color: () {
-                                                    if (_model.dropDownValue3 ==
+                                                    if (_model
+                                                            .dropDownband3Value ==
                                                         'BLACK') {
                                                       return Colors.black;
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownband3Value ==
                                                         'BROWN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .accent3;
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownband3Value ==
                                                         'RED') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .error;
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownband3Value ==
                                                         'ORANGE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .tertiary;
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownband3Value ==
                                                         'YELLOW') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .warning;
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownband3Value ==
                                                         'GREEN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .success;
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownband3Value ==
                                                         'BLUE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .primary;
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownband3Value ==
                                                         'VIOLET') {
                                                       return const Color(0xFF8F00FF);
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownband3Value ==
                                                         'WHITE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .info;
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownband3Value ==
                                                         'GREY') {
                                                       return FlutterFlowTheme
                                                               .of(context)
@@ -1338,9 +1388,10 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                               ),
                                             ),
                                           ),
-                                          if ((_model.dropDownValue7 ==
+                                          if ((_model.dropDownNumbandValue ==
                                                   'FIVE') ||
-                                              (_model.dropDownValue7 == 'SIX'))
+                                              (_model.dropDownNumbandValue ==
+                                                  'SIX'))
                                             Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -1369,22 +1420,22 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                     );
                                                   }
                                                   List<ThreeBand3Record>
-                                                      dropDownThreeBand3RecordList =
+                                                      dropDownband3ThreeBand3RecordList =
                                                       snapshot.data!;
                                                   return FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownValueController3 ??=
+                                                            .dropDownband3ValueController ??=
                                                         FormFieldController<
                                                             String>(null),
                                                     options:
-                                                        dropDownThreeBand3RecordList
+                                                        dropDownband3ThreeBand3RecordList
                                                             .map(
                                                                 (e) => e.output)
                                                             .toList(),
                                                     onChanged: (val) =>
                                                         setState(() => _model
-                                                                .dropDownValue3 =
+                                                                .dropDownband3Value =
                                                             val),
                                                     width: 150.0,
                                                     height: 35.0,
@@ -1427,10 +1478,11 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                         ],
                                       ),
                                     ),
-                                  if ((_model.dropDownValue7 == 'THREE') ||
-                                      (_model.dropDownValue7 == 'FOUR') ||
-                                      (_model.dropDownValue7 == 'FIVE') ||
-                                      (_model.dropDownValue7 == 'SIX'))
+                                  if ((_model.dropDownNumbandValue ==
+                                          'THREE') ||
+                                      (_model.dropDownNumbandValue == 'FOUR') ||
+                                      (_model.dropDownNumbandValue == 'FIVE') ||
+                                      (_model.dropDownNumbandValue == 'SIX'))
                                     SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -1448,71 +1500,72 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                 height: 35.0,
                                                 decoration: BoxDecoration(
                                                   color: () {
-                                                    if (_model.dropDownValue4 ==
+                                                    if (_model
+                                                            .dropDownMultiplierValue ==
                                                         'BLACK') {
                                                       return Colors.black;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'BROWN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .accent3;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'RED') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .error;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'ORANGE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .tertiary;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'YELLOW') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .warning;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'GREEN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .success;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'BLUE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .primary;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'VIOLET') {
                                                       return const Color(0xFF8F00FF);
                                                     } else if (_model
-                                                            .dropDownValue3 ==
+                                                            .dropDownMultiplierValue ==
                                                         'GREY') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryText;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'WHITE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .info;
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'GOLD') {
                                                       return const Color(0xFFFFD700);
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'SILVER') {
                                                       return const Color(0xFFC0C0C0);
                                                     } else if (_model
-                                                            .dropDownValue4 ==
+                                                            .dropDownMultiplierValue ==
                                                         'PINK') {
                                                       return const Color(0xFFFA11E0);
                                                     } else {
@@ -1532,13 +1585,14 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                               ),
                                             ),
                                           ),
-                                          if ((_model.dropDownValue7 ==
+                                          if ((_model.dropDownNumbandValue ==
                                                   'THREE') ||
-                                              (_model.dropDownValue7 ==
+                                              (_model.dropDownNumbandValue ==
                                                   'FOUR') ||
-                                              (_model.dropDownValue7 ==
+                                              (_model.dropDownNumbandValue ==
                                                   'FIVE') ||
-                                              (_model.dropDownValue7 == 'SIX'))
+                                              (_model.dropDownNumbandValue ==
+                                                  'SIX'))
                                             Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -1567,16 +1621,16 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                     );
                                                   }
                                                   List<MultiplierRecord>
-                                                      dropDownMultiplierRecordList =
+                                                      dropDownMultiplierMultiplierRecordList =
                                                       snapshot.data!;
                                                   return FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownValueController4 ??=
+                                                            .dropDownMultiplierValueController ??=
                                                         FormFieldController<
                                                             String>(null),
                                                     options:
-                                                        dropDownMultiplierRecordList
+                                                        dropDownMultiplierMultiplierRecordList
                                                             .map((e) =>
                                                                 valueOrDefault<
                                                                     String>(
@@ -1586,7 +1640,7 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                             .toList(),
                                                     onChanged: (val) =>
                                                         setState(() => _model
-                                                                .dropDownValue4 =
+                                                                .dropDownMultiplierValue =
                                                             val),
                                                     width: 150.0,
                                                     height: 35.0,
@@ -1629,9 +1683,9 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                         ],
                                       ),
                                     ),
-                                  if ((_model.dropDownValue7 == 'FOUR') ||
-                                      (_model.dropDownValue7 == 'FIVE') ||
-                                      (_model.dropDownValue7 == 'SIX'))
+                                  if ((_model.dropDownNumbandValue == 'FOUR') ||
+                                      (_model.dropDownNumbandValue == 'FIVE') ||
+                                      (_model.dropDownNumbandValue == 'SIX'))
                                     SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -1649,57 +1703,58 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                 height: 35.0,
                                                 decoration: BoxDecoration(
                                                   color: () {
-                                                    if (_model.dropDownValue5 ==
+                                                    if (_model
+                                                            .dropDownToleranceValue ==
                                                         'ORANGNGE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .tertiary;
                                                     } else if (_model
-                                                            .dropDownValue5 ==
+                                                            .dropDownToleranceValue ==
                                                         'BROWN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .accent3;
                                                     } else if (_model
-                                                            .dropDownValue5 ==
+                                                            .dropDownToleranceValue ==
                                                         'RED') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .error;
                                                     } else if (_model
-                                                            .dropDownValue5 ==
+                                                            .dropDownToleranceValue ==
                                                         'YELLOW') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .warning;
                                                     } else if (_model
-                                                            .dropDownValue5 ==
+                                                            .dropDownToleranceValue ==
                                                         'GREEN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .success;
                                                     } else if (_model
-                                                            .dropDownValue5 ==
+                                                            .dropDownToleranceValue ==
                                                         'BLUE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .primary;
                                                     } else if (_model
-                                                            .dropDownValue5 ==
+                                                            .dropDownToleranceValue ==
                                                         'VIOLET') {
                                                       return const Color(0xFF8F00FF);
                                                     } else if (_model
-                                                            .dropDownValue5 ==
+                                                            .dropDownToleranceValue ==
                                                         'GREY') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryText;
                                                     } else if (_model
-                                                            .dropDownValue5 ==
+                                                            .dropDownToleranceValue ==
                                                         'GOLD') {
                                                       return const Color(0xFFFFD700);
                                                     } else if (_model
-                                                            .dropDownValue5 ==
+                                                            .dropDownToleranceValue ==
                                                         'SILVER') {
                                                       return const Color(0xFFC0C0C0);
                                                     } else {
@@ -1719,10 +1774,11 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                               ),
                                             ),
                                           ),
-                                          if ((_model.dropDownValue7 == 'FOUR') ||
-                                              (_model.dropDownValue7 ==
+                                          if ((_model.dropDownNumbandValue == 'FOUR') ||
+                                              (_model.dropDownNumbandValue ==
                                                   'FIVE') ||
-                                              (_model.dropDownValue7 == 'SIX'))
+                                              (_model.dropDownNumbandValue ==
+                                                  'SIX'))
                                             Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -1751,16 +1807,16 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                     );
                                                   }
                                                   List<ToleranceRecord>
-                                                      dropDownToleranceRecordList =
+                                                      dropDownToleranceToleranceRecordList =
                                                       snapshot.data!;
                                                   return FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownValueController5 ??=
+                                                            .dropDownToleranceValueController ??=
                                                         FormFieldController<
                                                             String>(null),
                                                     options:
-                                                        dropDownToleranceRecordList
+                                                        dropDownToleranceToleranceRecordList
                                                             .map((e) =>
                                                                 valueOrDefault<
                                                                     String>(
@@ -1770,7 +1826,7 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                             .toList(),
                                                     onChanged: (val) =>
                                                         setState(() => _model
-                                                                .dropDownValue5 =
+                                                                .dropDownToleranceValue =
                                                             val),
                                                     width: 150.0,
                                                     height: 35.0,
@@ -1813,7 +1869,7 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                         ],
                                       ),
                                     ),
-                                  if (_model.dropDownValue7 == 'SIX')
+                                  if (_model.dropDownNumbandValue == 'SIX')
                                     SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -1831,51 +1887,52 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                 height: 35.0,
                                                 decoration: BoxDecoration(
                                                   color: () {
-                                                    if (_model.dropDownValue6 ==
+                                                    if (_model
+                                                            .dropDownTempCoeffValue ==
                                                         'BLACK') {
                                                       return Colors.black;
                                                     } else if (_model
-                                                            .dropDownValue6 ==
+                                                            .dropDownTempCoeffValue ==
                                                         'BROWN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .accent3;
                                                     } else if (_model
-                                                            .dropDownValue6 ==
+                                                            .dropDownTempCoeffValue ==
                                                         'RED') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .error;
                                                     } else if (_model
-                                                            .dropDownValue6 ==
+                                                            .dropDownTempCoeffValue ==
                                                         'ORANGE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .tertiary;
                                                     } else if (_model
-                                                            .dropDownValue6 ==
+                                                            .dropDownTempCoeffValue ==
                                                         'YELLOW') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .warning;
                                                     } else if (_model
-                                                            .dropDownValue6 ==
+                                                            .dropDownTempCoeffValue ==
                                                         'GREEN') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .success;
                                                     } else if (_model
-                                                            .dropDownValue6 ==
+                                                            .dropDownTempCoeffValue ==
                                                         'BLUE') {
                                                       return FlutterFlowTheme
                                                               .of(context)
                                                           .primary;
                                                     } else if (_model
-                                                            .dropDownValue6 ==
+                                                            .dropDownTempCoeffValue ==
                                                         'VIOLET') {
                                                       return const Color(0xFF8F00FF);
                                                     } else if (_model
-                                                            .dropDownValue6 ==
+                                                            .dropDownTempCoeffValue ==
                                                         'GREY') {
                                                       return FlutterFlowTheme
                                                               .of(context)
@@ -1897,7 +1954,8 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                               ),
                                             ),
                                           ),
-                                          if (_model.dropDownValue7 == 'SIX')
+                                          if (_model.dropDownNumbandValue ==
+                                              'SIX')
                                             StreamBuilder<
                                                 List<TempCoeffRecord>>(
                                               stream: queryTempCoeffRecord(),
@@ -1922,16 +1980,16 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                   );
                                                 }
                                                 List<TempCoeffRecord>
-                                                    dropDownTempCoeffRecordList =
+                                                    dropDownTempCoeffTempCoeffRecordList =
                                                     snapshot.data!;
                                                 return FlutterFlowDropDown<
                                                     String>(
                                                   controller: _model
-                                                          .dropDownValueController6 ??=
+                                                          .dropDownTempCoeffValueController ??=
                                                       FormFieldController<
                                                           String>(null),
                                                   options:
-                                                      dropDownTempCoeffRecordList
+                                                      dropDownTempCoeffTempCoeffRecordList
                                                           .map((e) =>
                                                               valueOrDefault<
                                                                   String>(
@@ -1941,7 +1999,7 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                                           .toList(),
                                                   onChanged: (val) => setState(
                                                       () => _model
-                                                              .dropDownValue6 =
+                                                              .dropDownTempCoeffValue =
                                                           val),
                                                   width: 150.0,
                                                   height: 35.0,
@@ -2012,18 +2070,20 @@ class _ThreebandWidgetState extends State<ThreebandWidget> {
                                             );
                                           }
                                           List<NmBANDSRecord>
-                                              dropDownNmBANDSRecordList =
+                                              dropDownNumbandNmBANDSRecordList =
                                               snapshot.data!;
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
-                                                    .dropDownValueController7 ??=
+                                                    .dropDownNumbandValueController ??=
                                                 FormFieldController<String>(
                                                     null),
-                                            options: dropDownNmBANDSRecordList
-                                                .map((e) => e.output)
-                                                .toList(),
+                                            options:
+                                                dropDownNumbandNmBANDSRecordList
+                                                    .map((e) => e.output)
+                                                    .toList(),
                                             onChanged: (val) => setState(() =>
-                                                _model.dropDownValue7 = val),
+                                                _model.dropDownNumbandValue =
+                                                    val),
                                             width: 290.0,
                                             height: 35.0,
                                             textStyle:

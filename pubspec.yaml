@@ -39,6 +39,7 @@ dependencies:
   firebase_performance: 0.9.3+8
   firebase_performance_platform_interface: 0.1.4+16
   firebase_performance_web: 0.1.4+16
+  floating_bottom_navigation_bar: 1.5.2
   flutter_animate: 4.1.1+1
   flutter_cache_manager: 3.3.1
   font_awesome_flutter: 10.6.0

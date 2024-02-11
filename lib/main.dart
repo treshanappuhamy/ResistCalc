@@ -6,6 +6,7 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'index.dart';
 
 void main() async {
@@ -101,46 +102,105 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'RtoC': const RtoCWidget(),
-      'threeband': const ThreebandWidget(),
-      'cvRCC': const CvRCCWidget(),
+      'C2R': const C2rWidget(),
+      'AIhelper': const AIhelperWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
+    final MediaQueryData queryData = MediaQuery.of(context);
+
     return Scaffold(
-      body: _currentPage ?? tabs[_currentPageName],
-      bottomNavigationBar: BottomNavigationBar(
+      body: MediaQuery(
+          data: queryData
+              .removeViewInsets(removeBottom: true)
+              .removeViewPadding(removeBottom: true),
+          child: _currentPage ?? tabs[_currentPageName]!),
+      extendBody: true,
+      bottomNavigationBar: FloatingNavbar(
         currentIndex: currentIndex,
         onTap: (i) => setState(() {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
-        backgroundColor: Colors.white,
-        selectedItemColor: FlutterFlowTheme.of(context).primary,
-        unselectedItemColor: const Color(0x8A000000),
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search_sharp,
+        backgroundColor: FlutterFlowTheme.of(context).primaryText,
+        selectedItemColor: FlutterFlowTheme.of(context).info,
+        unselectedItemColor: FlutterFlowTheme.of(context).info,
+        selectedBackgroundColor: FlutterFlowTheme.of(context).secondaryText,
+        borderRadius: 8.0,
+        itemBorderRadius: 8.0,
+        margin: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+        width: 393.0,
+        elevation: 1.0,
+        items: [
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.search_sharp,
+                  color: currentIndex == 0
+                      ? FlutterFlowTheme.of(context).info
+                      : FlutterFlowTheme.of(context).info,
+                ),
+                Text(
+                  'R2C',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 0
+                        ? FlutterFlowTheme.of(context).info
+                        : FlutterFlowTheme.of(context).info,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            label: 'R2C',
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.colorize_sharp,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.colorize_sharp,
+                  color: currentIndex == 1
+                      ? FlutterFlowTheme.of(context).info
+                      : FlutterFlowTheme.of(context).info,
+                ),
+                Text(
+                  'C2R',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 1
+                        ? FlutterFlowTheme.of(context).info
+                        : FlutterFlowTheme.of(context).info,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            label: 'C2R',
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.camera_enhance,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.computer_sharp,
+                  color: currentIndex == 2
+                      ? FlutterFlowTheme.of(context).info
+                      : FlutterFlowTheme.of(context).info,
+                ),
+                Text(
+                  'ai(soon)',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 2
+                        ? FlutterFlowTheme.of(context).info
+                        : FlutterFlowTheme.of(context).info,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            label: 'AI CAMERA',
-            tooltip: '',
           )
         ],
       ),

@@ -1,4 +1,4 @@
 // Export pages
-export '/threeband/threeband_widget.dart' show ThreebandWidget;
-export '/cv_r_c_c/cv_r_c_c_widget.dart' show CvRCCWidget;
+export '/c2r/c2r_widget.dart' show C2rWidget;
+export '/a_ihelper/a_ihelper_widget.dart' show AIhelperWidget;
 export '/rto_c/rto_c_widget.dart' show RtoCWidget;

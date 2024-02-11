@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -13,12 +14,19 @@ class FFAppState extends ChangeNotifier {
     _instance = FFAppState._internal();
   }
 
-  Future initializePersistedState() async {}
+  Future initializePersistedState() async {
+    prefs = await SharedPreferences.getInstance();
+    _safeInit(() {
+      _RemoveAds24hrs = prefs.getInt('ff_RemoveAds24hrs') ?? _RemoveAds24hrs;
+    });
+  }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
+
+  late SharedPreferences prefs;
 
   String _nbSTATE = '';
   String get nbSTATE => _nbSTATE;
@@ -61,4 +69,23 @@ class FFAppState extends ChangeNotifier {
   set multipliercolor(String value) {
     _multipliercolor = value;
   }
+
+  int _RemoveAds24hrs = 0;
+  int get RemoveAds24hrs => _RemoveAds24hrs;
+  set RemoveAds24hrs(int value) {
+    _RemoveAds24hrs = value;
+    prefs.setInt('ff_RemoveAds24hrs', value);
+  }
+}
+
+void _safeInit(Function() initializeField) {
+  try {
+    initializeField();
+  } catch (_) {}
+}
+
+Future _safeInitAsync(Function() initializeField) async {
+  try {
+    await initializeField();
+  } catch (_) {}
 }

@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'aboutapp_model.dart';
 export 'aboutapp_model.dart';
 
@@ -26,8 +27,6 @@ class _AboutappWidgetState extends State<AboutappWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AboutappModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -45,7 +44,7 @@ class _AboutappWidgetState extends State<AboutappWidget> {
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
       child: Container(
         width: 370.0,
-        height: 360.0,
+        height: 453.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           boxShadow: const [
@@ -89,6 +88,150 @@ class _AboutappWidgetState extends State<AboutappWidget> {
                         color: Colors.black,
                       ),
                 ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 5.0, 0.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        await launchUrl(Uri(
+                            scheme: 'mailto',
+                            path: 'resistcalc@gmail.com',
+                            query: {
+                              'subject': 'Re: Inquires - ResistCalc',
+                            }
+                                .entries
+                                .map((MapEntry<String, String> e) =>
+                                    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                .join('&')));
+                      },
+                      text: 'Contact Us',
+                      icon: const Icon(
+                        Icons.mail_outlined,
+                        size: 15.0,
+                      ),
+                      options: FFButtonOptions(
+                        width: 144.0,
+                        height: 40.0,
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            24.0, 0.0, 24.0, 0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: const Color(0xAAFFFFFF),
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.black,
+                                  fontSize: 15.0,
+                                ),
+                        elevation: 3.0,
+                        borderSide: const BorderSide(
+                          color: Colors.black,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        await launchUrl(Uri(
+                            scheme: 'mailto',
+                            path: 'resistcalc@gmail.com',
+                            query: {
+                              'subject': 'Feedback - ResistCalc',
+                            }
+                                .entries
+                                .map((MapEntry<String, String> e) =>
+                                    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                .join('&')));
+                      },
+                      text: 'Send Feedback',
+                      icon: const Icon(
+                        Icons.feedback_outlined,
+                        size: 15.0,
+                      ),
+                      options: FFButtonOptions(
+                        width: 171.0,
+                        height: 40.0,
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            24.0, 0.0, 24.0, 0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: const Color(0xAAFFFFFF),
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.black,
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                        elevation: 3.0,
+                        borderSide: const BorderSide(
+                          color: Colors.black,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        await launchUrl(Uri(
+                            scheme: 'mailto',
+                            path: 'resistcalc@gmail.com',
+                            query: {
+                              'subject': 'App Crash Report - ResistCalc',
+                            }
+                                .entries
+                                .map((MapEntry<String, String> e) =>
+                                    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                .join('&')));
+                      },
+                      text: 'App Crash Report',
+                      icon: const Icon(
+                        Icons.bug_report_outlined,
+                        size: 15.0,
+                      ),
+                      options: FFButtonOptions(
+                        width: 320.0,
+                        height: 40.0,
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            24.0, 0.0, 24.0, 0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: const Color(0xAAFFFFFF),
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.black,
+                                ),
+                        elevation: 3.0,
+                        borderSide: const BorderSide(
+                          color: Colors.black,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               Row(
                 mainAxisSize: MainAxisSize.max,

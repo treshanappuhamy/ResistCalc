@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'cv_r_c_c_widget.dart' show CvRCCWidget;
+import 'a_ihelper_widget.dart' show AIhelperWidget;
 import 'package:flutter/material.dart';
 
-class CvRCCModel extends FlutterFlowModel<CvRCCWidget> {
+class AIhelperModel extends FlutterFlowModel<AIhelperWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

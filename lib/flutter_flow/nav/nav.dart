@@ -58,17 +58,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const NavBarPage(),
         ),
         FFRoute(
-          name: 'threeband',
-          path: '/threeband',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'threeband')
-              : const ThreebandWidget(),
+          name: 'C2R',
+          path: '/c2r',
+          builder: (context, params) =>
+              params.isEmpty ? const NavBarPage(initialPage: 'C2R') : const C2rWidget(),
         ),
         FFRoute(
-          name: 'cvRCC',
-          path: '/cvRCC',
-          builder: (context, params) =>
-              params.isEmpty ? const NavBarPage(initialPage: 'cvRCC') : const CvRCCWidget(),
+          name: 'AIhelper',
+          path: '/aIhelper',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'AIhelper')
+              : const AIhelperWidget(),
         ),
         FFRoute(
           name: 'RtoC',
