@@ -27,20 +27,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
-    'textOnPageLoadAnimation1': AnimationInfo(
-      loop: true,
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.bounceOut,
-          delay: 0.ms,
-          duration: 1330.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-    'textOnPageLoadAnimation2': AnimationInfo(
+    'textOnPageLoadAnimation': AnimationInfo(
       loop: true,
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -600,7 +587,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                               .error,
                                         ),
                                   ).animateOnPageLoad(animationsMap[
-                                      'textOnPageLoadAnimation1']!),
+                                      'textOnPageLoadAnimation']!),
                                 ),
                               ),
                               Align(
@@ -638,7 +625,8 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                               (_model.dropDownValue1 ==
                                                   'SIX')) &&
                                           (FFAppState().multipliercolor !=
-                                              'null'))
+                                              'null') &&
+                                          (_model.dropDownValue3 != 'null'))
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -655,8 +643,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                       if ((_model.textController.text !=
                                                   '') &&
                                           (_model.dropDownValue1 == 'SIX') &&
-                                          (FFAppState().multipliercolor !=
-                                              'null'))
+                                          (_model.dropDowntemoValue != 'null'))
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -1092,7 +1079,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                     alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          50.0, 40.0, 50.0, 0.0),
+                                          50.0, 42.0, 50.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
                                                 .dropDownValueController3 ??=
@@ -1180,7 +1167,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                     alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          50.0, 126.0, 50.0, 0.0),
+                                          50.0, 128.0, 50.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
                                                 .dropDowntemoValueController ??=
@@ -1310,8 +1297,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                     color: FlutterFlowTheme.of(context).info,
                                     fontSize: 50.0,
                                   ),
-                            ).animateOnPageLoad(
-                                animationsMap['textOnPageLoadAnimation2']!),
+                            ),
                           ),
                         ),
                         Align(
