@@ -43,8 +43,7 @@ class _AboutappWidgetState extends State<AboutappWidget> {
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
       child: Container(
-        width: 370.0,
-        height: 453.0,
+        height: 450.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           boxShadow: const [
@@ -79,7 +78,7 @@ class _AboutappWidgetState extends State<AboutappWidget> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 8.0, 10.0, 0.0),
                 child: Text(
                   'ResistCalc is a dedicated application designed for the meticulous decoding of resistor color bands, providing a streamlined approach to ascertain resistor values. Tailored for both electronics professionals and enthusiasts, this application simplifies the identification and comprehension of resistors.\n\nIn order to support the continued development and enhancement of ResistCalc, we\'ve included a small, unobtrusive ad.',
                   textAlign: TextAlign.justify,
@@ -93,141 +92,94 @@ class _AboutappWidgetState extends State<AboutappWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 5.0, 0.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        await launchUrl(Uri(
-                            scheme: 'mailto',
-                            path: 'resistcalc@gmail.com',
-                            query: {
-                              'subject': 'Re: Inquires - ResistCalc',
-                            }
-                                .entries
-                                .map((MapEntry<String, String> e) =>
-                                    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                                .join('&')));
-                      },
-                      text: 'Contact Us',
-                      icon: const Icon(
-                        Icons.mail_outlined,
-                        size: 15.0,
-                      ),
-                      options: FFButtonOptions(
-                        width: 144.0,
-                        height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xAAFFFFFF),
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Readex Pro',
-                                  color: Colors.black,
-                                  fontSize: 15.0,
-                                ),
-                        elevation: 3.0,
-                        borderSide: const BorderSide(
-                          color: Colors.black,
-                          width: 1.0,
+                  Flexible(
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 5.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          await launchUrl(Uri(
+                              scheme: 'mailto',
+                              path: 'resistcalc@gmail.com',
+                              query: {
+                                'subject': 'Re: Inquires - ResistCalc',
+                              }
+                                  .entries
+                                  .map((MapEntry<String, String> e) =>
+                                      '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                  .join('&')));
+                        },
+                        text: 'Contact Us',
+                        icon: const Icon(
+                          Icons.mail_outlined,
+                          size: 15.0,
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
+                        options: FFButtonOptions(
+                          height: 40.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: const Color(0xAAFFFFFF),
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.black,
+                                    fontSize: 15.0,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: const BorderSide(
+                            color: Colors.black,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        await launchUrl(Uri(
-                            scheme: 'mailto',
-                            path: 'resistcalc@gmail.com',
-                            query: {
-                              'subject': 'Feedback - ResistCalc',
-                            }
-                                .entries
-                                .map((MapEntry<String, String> e) =>
-                                    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                                .join('&')));
-                      },
-                      text: 'Send Feedback',
-                      icon: const Icon(
-                        Icons.feedback_outlined,
-                        size: 15.0,
-                      ),
-                      options: FFButtonOptions(
-                        width: 171.0,
-                        height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xAAFFFFFF),
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Readex Pro',
-                                  color: Colors.black,
-                                  fontSize: 15.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                        elevation: 3.0,
-                        borderSide: const BorderSide(
-                          color: Colors.black,
-                          width: 1.0,
+                  Flexible(
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          await launchUrl(Uri(
+                              scheme: 'mailto',
+                              path: 'resistcalc@gmail.com',
+                              query: {
+                                'subject': 'Feedback - ResistCalc',
+                              }
+                                  .entries
+                                  .map((MapEntry<String, String> e) =>
+                                      '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                  .join('&')));
+                        },
+                        text: 'Feedback',
+                        icon: const Icon(
+                          Icons.feedback_outlined,
+                          size: 15.0,
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        await launchUrl(Uri(
-                            scheme: 'mailto',
-                            path: 'resistcalc@gmail.com',
-                            query: {
-                              'subject': 'App Crash Report - ResistCalc',
-                            }
-                                .entries
-                                .map((MapEntry<String, String> e) =>
-                                    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                                .join('&')));
-                      },
-                      text: 'App Crash Report',
-                      icon: const Icon(
-                        Icons.bug_report_outlined,
-                        size: 15.0,
-                      ),
-                      options: FFButtonOptions(
-                        width: 320.0,
-                        height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xAAFFFFFF),
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Readex Pro',
-                                  color: Colors.black,
-                                ),
-                        elevation: 3.0,
-                        borderSide: const BorderSide(
-                          color: Colors.black,
-                          width: 1.0,
+                        options: FFButtonOptions(
+                          height: 40.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: const Color(0xAAFFFFFF),
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.black,
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: const BorderSide(
+                            color: Colors.black,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                   ),
@@ -237,33 +189,86 @@ class _AboutappWidgetState extends State<AboutappWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        Navigator.pop(context);
-                      },
-                      text: 'Close',
-                      options: FFButtonOptions(
-                        width: 320.0,
-                        height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xAAFFFFFF),
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Readex Pro',
-                                  color: Colors.black,
-                                ),
-                        elevation: 3.0,
-                        borderSide: const BorderSide(
-                          color: Colors.black,
-                          width: 1.0,
+                  Expanded(
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 16.0, 10.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          await launchUrl(Uri(
+                              scheme: 'mailto',
+                              path: 'resistcalc@gmail.com',
+                              query: {
+                                'subject': 'App Crash Report - ResistCalc',
+                              }
+                                  .entries
+                                  .map((MapEntry<String, String> e) =>
+                                      '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                  .join('&')));
+                        },
+                        text: 'App Crash Report',
+                        icon: const Icon(
+                          Icons.bug_report_outlined,
+                          size: 15.0,
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
+                        options: FFButtonOptions(
+                          width: 320.0,
+                          height: 40.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: const Color(0xAAFFFFFF),
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.black,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: const BorderSide(
+                            color: Colors.black,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 16.0, 10.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          Navigator.pop(context);
+                        },
+                        text: 'Close',
+                        options: FFButtonOptions(
+                          width: 320.0,
+                          height: 40.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: const Color(0xAAFFFFFF),
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.black,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: const BorderSide(
+                            color: Colors.black,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
                       ),
                     ),
                   ),

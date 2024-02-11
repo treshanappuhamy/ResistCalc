@@ -87,7 +87,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
               Align(
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -744,7 +744,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
@@ -758,152 +758,72 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                       Expanded(
                         child: Align(
                           alignment: const AlignmentDirectional(0.0, -1.0),
-                          child: SizedBox(
-                            width: 393.0,
-                            height: 190.0,
-                            child: Stack(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        50.0, 0.0, 50.0, 10.0),
-                                    child: StreamBuilder<List<NmBANDSRecord>>(
-                                      stream: queryNmBANDSRecord(
-                                        queryBuilder: (nmBANDSRecord) =>
-                                            nmBANDSRecord.orderBy('numnum'),
-                                      ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                        List<NmBANDSRecord>
-                                            dropDownNmBANDSRecordList =
-                                            snapshot.data!;
-                                        return FlutterFlowDropDown<String>(
-                                          controller: _model
-                                                  .dropDownValueController1 ??=
-                                              FormFieldController<String>(
-                                            _model.dropDownValue1 ??= 'THREE',
-                                          ),
-                                          options: dropDownNmBANDSRecordList
-                                              .map((e) => e.output)
-                                              .toList(),
-                                          onChanged: (val) async {
-                                            setState(() =>
-                                                _model.dropDownValue1 =
-                                                    val); // updatingAppStates
-                                            setState(() {
-                                              FFAppState().band1color =
-                                                  functions.arg2color(
-                                                      double.tryParse(_model
-                                                          .textController.text),
-                                                      _model.dropDownValue1,
-                                                      _model.dropDownValue2,
-                                                      _model
-                                                          .dropDownValue3)![0];
-                                              FFAppState().band2color =
-                                                  functions.arg2color(
-                                                      double.tryParse(_model
-                                                          .textController.text),
-                                                      _model.dropDownValue1,
-                                                      _model.dropDownValue2,
-                                                      _model
-                                                          .dropDownValue3)![1];
-                                              FFAppState().multipliercolor =
-                                                  functions.arg2color(
-                                                      double.tryParse(_model
-                                                          .textController.text),
-                                                      _model.dropDownValue1,
-                                                      _model.dropDownValue2,
-                                                      _model
-                                                          .dropDownValue3)![2];
-                                              FFAppState().band3color =
-                                                  functions.arg2color(
-                                                      double.tryParse(_model
-                                                          .textController.text),
-                                                      _model.dropDownValue1,
-                                                      _model.dropDownValue2,
-                                                      _model
-                                                          .dropDownValue3)![3];
-                                            });
-                                          },
-                                          width: 290.0,
-                                          height: 35.0,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium,
-                                          hintText:
-                                              'Please select the number of bands',
-                                          icon: Icon(
-                                            Icons.keyboard_arrow_down_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 24.0,
-                                          ),
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          elevation: 2.0,
-                                          borderColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                          borderWidth: 2.0,
-                                          borderRadius: 8.0,
-                                          margin:
+                          child: ListView(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                child: SizedBox(
+                                  width: 393.0,
+                                  height: 190.0,
+                                  child: Stack(
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, -1.0),
+                                        child: Padding(
+                                          padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 4.0, 16.0, 4.0),
-                                          hidesUnderline: true,
-                                          isOverButton: true,
-                                          isSearchable: false,
-                                          isMultiSelect: false,
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, -0.65),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 20.0, 0.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    50.0, 0.0, 8.0, 0.0),
-                                            child: TextFormField(
-                                              controller: _model.textController,
-                                              focusNode:
-                                                  _model.textFieldFocusNode,
-                                              onChanged: (_) =>
-                                                  EasyDebounce.debounce(
-                                                '_model.textController',
-                                                const Duration(milliseconds: 5),
-                                                () async {
-                                                  // updatingAppStates
+                                                  50.0, 0.0, 50.0, 10.0),
+                                          child: StreamBuilder<
+                                              List<NmBANDSRecord>>(
+                                            stream: queryNmBANDSRecord(
+                                              queryBuilder: (nmBANDSRecord) =>
+                                                  nmBANDSRecord
+                                                      .orderBy('numnum'),
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<NmBANDSRecord>
+                                                  dropDownNmBANDSRecordList =
+                                                  snapshot.data!;
+                                              return FlutterFlowDropDown<
+                                                  String>(
+                                                controller: _model
+                                                        .dropDownValueController1 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropDownValue1 ??=
+                                                      'THREE',
+                                                ),
+                                                options:
+                                                    dropDownNmBANDSRecordList
+                                                        .map((e) => e.output)
+                                                        .toList(),
+                                                onChanged: (val) async {
+                                                  setState(() => _model
+                                                          .dropDownValue1 =
+                                                      val); // updatingAppStates
                                                   setState(() {
                                                     FFAppState().band1color =
                                                         functions.arg2color(
@@ -951,348 +871,526 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                                 .dropDownValue3)![3];
                                                   });
                                                 },
-                                              ),
-                                              autofocus: true,
-                                              obscureText: false,
-                                              decoration: InputDecoration(
-                                                labelText:
-                                                    'Enter the Resistance Value',
-                                                labelStyle:
+                                                height: 35.0,
+                                                textStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium,
-                                                alignLabelWithHint: false,
-                                                hintStyle:
+                                                        .bodyMedium,
+                                                hintText:
+                                                    'Please select the number of bands',
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium,
-                                                enabledBorder:
-                                                    UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
+                                                        .secondaryBackground,
+                                                elevation: 2.0,
+                                                borderColor:
+                                                    FlutterFlowTheme.of(context)
                                                         .alternate,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10.0),
-                                                ),
-                                                focusedBorder:
-                                                    UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10.0),
-                                                ),
-                                                errorBorder:
-                                                    UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10.0),
-                                                ),
-                                                focusedErrorBorder:
-                                                    UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10.0),
-                                                ),
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                              textAlign: TextAlign.start,
-                                              keyboardType: const TextInputType
-                                                  .numberWithOptions(
-                                                  decimal: true),
-                                              validator: _model
-                                                  .textControllerValidator
-                                                  .asValidator(context),
-                                            ),
+                                                borderWidth: 2.0,
+                                                borderRadius: 8.0,
+                                                margin: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 4.0, 16.0, 4.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              );
+                                            },
                                           ),
                                         ),
-                                        Padding(
+                                      ),
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, -0.65),
+                                        child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 50.0, 0.0),
-                                          child: FlutterFlowDropDown<String>(
-                                            controller: _model
-                                                    .dropDownValueController2 ??=
-                                                FormFieldController<String>(
-                                              _model.dropDownValue2 ??= 'Ω',
-                                            ),
-                                            options: const ['Ω', 'kΩ', 'MΩ', 'GΩ'],
-                                            onChanged: (val) async {
-                                              setState(() =>
-                                                  _model.dropDownValue2 =
-                                                      val); // updatingAppStates
-                                              setState(() {
-                                                FFAppState().band1color =
-                                                    functions.arg2color(
-                                                        double.tryParse(_model
-                                                            .textController
-                                                            .text),
-                                                        _model.dropDownValue1,
-                                                        _model.dropDownValue2,
-                                                        _model
-                                                            .dropDownValue3)![0];
-                                                FFAppState().band2color =
-                                                    functions.arg2color(
-                                                        double.tryParse(_model
-                                                            .textController
-                                                            .text),
-                                                        _model.dropDownValue1,
-                                                        _model.dropDownValue2,
-                                                        _model
-                                                            .dropDownValue3)![1];
-                                                FFAppState().multipliercolor =
-                                                    functions.arg2color(
-                                                        double.tryParse(_model
-                                                            .textController
-                                                            .text),
-                                                        _model.dropDownValue1,
-                                                        _model.dropDownValue2,
-                                                        _model
-                                                            .dropDownValue3)![2];
-                                                FFAppState().band3color =
-                                                    functions.arg2color(
-                                                        double.tryParse(_model
-                                                            .textController
-                                                            .text),
-                                                        _model.dropDownValue1,
-                                                        _model.dropDownValue2,
-                                                        _model
-                                                            .dropDownValue3)![3];
-                                              });
-                                            },
-                                            width: 90.0,
-                                            height: 50.0,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
-                                            hintText: 'Please select...',
-                                            icon: Icon(
-                                              Icons.keyboard_arrow_down_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
-                                            ),
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            elevation: 2.0,
-                                            borderColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderWidth: 2.0,
-                                            borderRadius: 8.0,
-                                            margin:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
-                                            hidesUnderline: true,
-                                            isOverButton: true,
-                                            isSearchable: false,
-                                            isMultiSelect: false,
+                                                  0.0, 20.0, 0.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          50.0, 0.0, 8.0, 0.0),
+                                                  child: TextFormField(
+                                                    controller:
+                                                        _model.textController,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode,
+                                                    onChanged: (_) =>
+                                                        EasyDebounce.debounce(
+                                                      '_model.textController',
+                                                      const Duration(milliseconds: 5),
+                                                      () async {
+                                                        // updatingAppStates
+                                                        setState(() {
+                                                          FFAppState()
+                                                                  .band1color =
+                                                              functions.arg2color(
+                                                                  double.tryParse(
+                                                                      _model
+                                                                          .textController
+                                                                          .text),
+                                                                  _model
+                                                                      .dropDownValue1,
+                                                                  _model
+                                                                      .dropDownValue2,
+                                                                  _model
+                                                                      .dropDownValue3)![0];
+                                                          FFAppState()
+                                                                  .band2color =
+                                                              functions.arg2color(
+                                                                  double.tryParse(
+                                                                      _model
+                                                                          .textController
+                                                                          .text),
+                                                                  _model
+                                                                      .dropDownValue1,
+                                                                  _model
+                                                                      .dropDownValue2,
+                                                                  _model
+                                                                      .dropDownValue3)![1];
+                                                          FFAppState()
+                                                                  .multipliercolor =
+                                                              functions.arg2color(
+                                                                  double.tryParse(_model
+                                                                      .textController
+                                                                      .text),
+                                                                  _model
+                                                                      .dropDownValue1,
+                                                                  _model
+                                                                      .dropDownValue2,
+                                                                  _model
+                                                                      .dropDownValue3)![2];
+                                                          FFAppState()
+                                                                  .band3color =
+                                                              functions.arg2color(
+                                                                  double.tryParse(
+                                                                      _model
+                                                                          .textController
+                                                                          .text),
+                                                                  _model
+                                                                      .dropDownValue1,
+                                                                  _model
+                                                                      .dropDownValue2,
+                                                                  _model
+                                                                      .dropDownValue3)![3];
+                                                        });
+                                                      },
+                                                    ),
+                                                    autofocus: true,
+                                                    obscureText: false,
+                                                    decoration: InputDecoration(
+                                                      labelText:
+                                                          'Enter the Resistance Value',
+                                                      labelStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium,
+                                                      alignLabelWithHint: false,
+                                                      hintStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium,
+                                                      enabledBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                      ),
+                                                      focusedBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                      ),
+                                                      errorBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                      ),
+                                                      focusedErrorBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                      ),
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium,
+                                                    textAlign: TextAlign.start,
+                                                    keyboardType:
+                                                        const TextInputType
+                                                            .numberWithOptions(
+                                                            decimal: true),
+                                                    validator: _model
+                                                        .textControllerValidator
+                                                        .asValidator(context),
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 50.0, 0.0),
+                                                child:
+                                                    FlutterFlowDropDown<String>(
+                                                  controller: _model
+                                                          .dropDownValueController2 ??=
+                                                      FormFieldController<
+                                                          String>(
+                                                    _model.dropDownValue2 ??=
+                                                        'Ω',
+                                                  ),
+                                                  options: const [
+                                                    'Ω',
+                                                    'kΩ',
+                                                    'MΩ',
+                                                    'GΩ'
+                                                  ],
+                                                  onChanged: (val) async {
+                                                    setState(() => _model
+                                                            .dropDownValue2 =
+                                                        val); // updatingAppStates
+                                                    setState(() {
+                                                      FFAppState().band1color =
+                                                          functions.arg2color(
+                                                              double.tryParse(_model
+                                                                  .textController
+                                                                  .text),
+                                                              _model
+                                                                  .dropDownValue1,
+                                                              _model
+                                                                  .dropDownValue2,
+                                                              _model
+                                                                  .dropDownValue3)![0];
+                                                      FFAppState().band2color =
+                                                          functions.arg2color(
+                                                              double.tryParse(_model
+                                                                  .textController
+                                                                  .text),
+                                                              _model
+                                                                  .dropDownValue1,
+                                                              _model
+                                                                  .dropDownValue2,
+                                                              _model
+                                                                  .dropDownValue3)![1];
+                                                      FFAppState()
+                                                              .multipliercolor =
+                                                          functions.arg2color(
+                                                              double.tryParse(_model
+                                                                  .textController
+                                                                  .text),
+                                                              _model
+                                                                  .dropDownValue1,
+                                                              _model
+                                                                  .dropDownValue2,
+                                                              _model
+                                                                  .dropDownValue3)![2];
+                                                      FFAppState().band3color =
+                                                          functions.arg2color(
+                                                              double.tryParse(_model
+                                                                  .textController
+                                                                  .text),
+                                                              _model
+                                                                  .dropDownValue1,
+                                                              _model
+                                                                  .dropDownValue2,
+                                                              _model
+                                                                  .dropDownValue3)![3];
+                                                    });
+                                                  },
+                                                  width: 90.0,
+                                                  height: 50.0,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium,
+                                                  hintText: 'Please select...',
+                                                  icon: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_down_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                  elevation: 2.0,
+                                                  borderColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate,
+                                                  borderWidth: 2.0,
+                                                  borderRadius: 8.0,
+                                                  margin: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 4.0, 16.0, 4.0),
+                                                  hidesUnderline: true,
+                                                  isOverButton: true,
+                                                  isSearchable: false,
+                                                  isMultiSelect: false,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                      if ((_model.dropDownValue1 == 'FOUR') ||
+                                          (_model.dropDownValue1 == 'FIVE') ||
+                                          (_model.dropDownValue1 == 'SIX'))
+                                        Align(
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    50.0, 42.0, 50.0, 0.0),
+                                            child: FlutterFlowDropDown<String>(
+                                              controller: _model
+                                                      .dropDownValueController3 ??=
+                                                  FormFieldController<String>(
+                                                      null),
+                                              options: const [
+                                                '±0.05%',
+                                                '±0.02%',
+                                                '±0.5%',
+                                                '±0.25%',
+                                                '±0.1%',
+                                                '±0.01%',
+                                                '±5%',
+                                                '±10%',
+                                                '±20%'
+                                              ],
+                                              onChanged: (val) async {
+                                                setState(() => _model
+                                                        .dropDownValue3 =
+                                                    val); // updatingAppStates
+                                                setState(() {
+                                                  FFAppState().band1color =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![0];
+                                                  FFAppState().band2color =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![1];
+                                                  FFAppState().multipliercolor =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![2];
+                                                  FFAppState().band3color =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![3];
+                                                });
+                                              },
+                                              height: 35.0,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium,
+                                              hintText: _model.dropDownValue1 ==
+                                                      'THREE'
+                                                  ? 'N/A'
+                                                  : 'Tolerance',
+                                              icon: Icon(
+                                                Icons
+                                                    .keyboard_arrow_down_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              elevation: 2.0,
+                                              borderColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                              borderWidth: 2.0,
+                                              borderRadius: 8.0,
+                                              margin: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 16.0, 0.0),
+                                              hidesUnderline: true,
+                                              disabled: _model.dropDownValue1 ==
+                                                  'THREE',
+                                              isOverButton: true,
+                                              isSearchable: false,
+                                              isMultiSelect: false,
+                                            ),
+                                          ),
+                                        ),
+                                      if (_model.dropDownValue1 == 'SIX')
+                                        Align(
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    50.0, 128.0, 50.0, 0.0),
+                                            child: FlutterFlowDropDown<String>(
+                                              controller: _model
+                                                      .dropDowntemoValueController ??=
+                                                  FormFieldController<String>(
+                                                      null),
+                                              options: const [
+                                                '250ppm/°C',
+                                                '100ppm/°C',
+                                                '50ppm/°C',
+                                                '15ppm/°C',
+                                                '25ppm/°C',
+                                                '20ppm/°C',
+                                                '10ppm/°C',
+                                                '5ppm/°C',
+                                                '1ppm/°C'
+                                              ],
+                                              onChanged: (val) async {
+                                                setState(() => _model
+                                                        .dropDowntemoValue =
+                                                    val); // updatingAppStates
+                                                setState(() {
+                                                  FFAppState().band1color =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![0];
+                                                  FFAppState().band2color =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![1];
+                                                  FFAppState().multipliercolor =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![2];
+                                                  FFAppState().band3color =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![3];
+                                                });
+                                              },
+                                              height: 35.0,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium,
+                                              hintText:
+                                                  'Temperature Coefficient',
+                                              icon: Icon(
+                                                Icons
+                                                    .keyboard_arrow_down_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              elevation: 2.0,
+                                              borderColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                              borderWidth: 2.0,
+                                              borderRadius: 8.0,
+                                              margin: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 16.0, 0.0),
+                                              hidesUnderline: true,
+                                              disabled: _model.dropDownValue1 !=
+                                                  'SIX',
+                                              isOverButton: true,
+                                              isSearchable: false,
+                                              isMultiSelect: false,
+                                            ),
+                                          ),
+                                        ),
+                                    ],
                                   ),
                                 ),
-                                if ((_model.dropDownValue1 == 'FOUR') ||
-                                    (_model.dropDownValue1 == 'FIVE') ||
-                                    (_model.dropDownValue1 == 'SIX'))
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          50.0, 42.0, 50.0, 0.0),
-                                      child: FlutterFlowDropDown<String>(
-                                        controller: _model
-                                                .dropDownValueController3 ??=
-                                            FormFieldController<String>(null),
-                                        options: const [
-                                          '±0.05%',
-                                          '±0.02%',
-                                          '±0.5%',
-                                          '±0.25%',
-                                          '±0.1%',
-                                          '±0.01%',
-                                          '±5%',
-                                          '±10%',
-                                          '±20%'
-                                        ],
-                                        onChanged: (val) async {
-                                          setState(() => _model.dropDownValue3 =
-                                              val); // updatingAppStates
-                                          setState(() {
-                                            FFAppState().band1color =
-                                                functions.arg2color(
-                                                    double.tryParse(_model
-                                                        .textController.text),
-                                                    _model.dropDownValue1,
-                                                    _model.dropDownValue2,
-                                                    _model.dropDownValue3)![0];
-                                            FFAppState().band2color =
-                                                functions.arg2color(
-                                                    double.tryParse(_model
-                                                        .textController.text),
-                                                    _model.dropDownValue1,
-                                                    _model.dropDownValue2,
-                                                    _model.dropDownValue3)![1];
-                                            FFAppState().multipliercolor =
-                                                functions.arg2color(
-                                                    double.tryParse(_model
-                                                        .textController.text),
-                                                    _model.dropDownValue1,
-                                                    _model.dropDownValue2,
-                                                    _model.dropDownValue3)![2];
-                                            FFAppState().band3color =
-                                                functions.arg2color(
-                                                    double.tryParse(_model
-                                                        .textController.text),
-                                                    _model.dropDownValue1,
-                                                    _model.dropDownValue2,
-                                                    _model.dropDownValue3)![3];
-                                          });
-                                        },
-                                        width: 290.0,
-                                        height: 35.0,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
-                                        hintText:
-                                            _model.dropDownValue1 == 'THREE'
-                                                ? 'N/A'
-                                                : 'Tolerance',
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 24.0,
-                                        ),
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        elevation: 2.0,
-                                        borderColor:
-                                            FlutterFlowTheme.of(context)
-                                                .alternate,
-                                        borderWidth: 2.0,
-                                        borderRadius: 8.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        hidesUnderline: true,
-                                        disabled:
-                                            _model.dropDownValue1 == 'THREE',
-                                        isOverButton: true,
-                                        isSearchable: false,
-                                        isMultiSelect: false,
-                                      ),
-                                    ),
-                                  ),
-                                if (_model.dropDownValue1 == 'SIX')
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          50.0, 128.0, 50.0, 0.0),
-                                      child: FlutterFlowDropDown<String>(
-                                        controller: _model
-                                                .dropDowntemoValueController ??=
-                                            FormFieldController<String>(null),
-                                        options: const [
-                                          '250ppm/°C',
-                                          '100ppm/°C',
-                                          '50ppm/°C',
-                                          '15ppm/°C',
-                                          '25ppm/°C',
-                                          '20ppm/°C',
-                                          '10ppm/°C',
-                                          '5ppm/°C',
-                                          '1ppm/°C'
-                                        ],
-                                        onChanged: (val) async {
-                                          setState(() =>
-                                              _model.dropDowntemoValue =
-                                                  val); // updatingAppStates
-                                          setState(() {
-                                            FFAppState().band1color =
-                                                functions.arg2color(
-                                                    double.tryParse(_model
-                                                        .textController.text),
-                                                    _model.dropDownValue1,
-                                                    _model.dropDownValue2,
-                                                    _model.dropDownValue3)![0];
-                                            FFAppState().band2color =
-                                                functions.arg2color(
-                                                    double.tryParse(_model
-                                                        .textController.text),
-                                                    _model.dropDownValue1,
-                                                    _model.dropDownValue2,
-                                                    _model.dropDownValue3)![1];
-                                            FFAppState().multipliercolor =
-                                                functions.arg2color(
-                                                    double.tryParse(_model
-                                                        .textController.text),
-                                                    _model.dropDownValue1,
-                                                    _model.dropDownValue2,
-                                                    _model.dropDownValue3)![2];
-                                            FFAppState().band3color =
-                                                functions.arg2color(
-                                                    double.tryParse(_model
-                                                        .textController.text),
-                                                    _model.dropDownValue1,
-                                                    _model.dropDownValue2,
-                                                    _model.dropDownValue3)![3];
-                                          });
-                                        },
-                                        width: 290.0,
-                                        height: 35.0,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
-                                        hintText: 'Temperature Coefficient',
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 24.0,
-                                        ),
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        elevation: 2.0,
-                                        borderColor:
-                                            FlutterFlowTheme.of(context)
-                                                .alternate,
-                                        borderWidth: 2.0,
-                                        borderRadius: 8.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        hidesUnderline: true,
-                                        disabled:
-                                            _model.dropDownValue1 != 'SIX',
-                                        isOverButton: true,
-                                        isSearchable: false,
-                                        isMultiSelect: false,
-                                      ),
-                                    ),
-                                  ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
