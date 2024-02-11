@@ -116,6 +116,9 @@ flutter:
     - family: MyFlutterApp
       fonts:
         - asset: assets/fonts/MyFlutterApp.ttf
+    - family: Qqeqe
+      fonts:
+        - asset: assets/fonts/Qqeqe.ttf
 
   
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,9 +1,7 @@
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 import 'aboutapp_model.dart';
 export 'aboutapp_model.dart';
@@ -15,25 +13,8 @@ class AboutappWidget extends StatefulWidget {
   State<AboutappWidget> createState() => _AboutappWidgetState();
 }
 
-class _AboutappWidgetState extends State<AboutappWidget>
-    with TickerProviderStateMixin {
+class _AboutappWidgetState extends State<AboutappWidget> {
   late AboutappModel _model;
-
-  final animationsMap = {
-    'iconOnPageLoadAnimation': AnimationInfo(
-      loop: true,
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        RotateEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-  };
 
   @override
   void setState(VoidCallback callback) {
@@ -64,7 +45,7 @@ class _AboutappWidgetState extends State<AboutappWidget>
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
       child: Container(
         width: 370.0,
-        height: 304.0,
+        height: 360.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           boxShadow: const [
@@ -101,35 +82,13 @@ class _AboutappWidgetState extends State<AboutappWidget>
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Text(
-                  'ResistCalc is a dedicated application designed for the meticulous decoding of resistor color bands, providing a streamlined approach to ascertain resistor values. Tailored for both electronics professionals and enthusiasts, this application simplifies the identification and comprehension of resistors.',
+                  'ResistCalc is a dedicated application designed for the meticulous decoding of resistor color bands, providing a streamlined approach to ascertain resistor values. Tailored for both electronics professionals and enthusiasts, this application simplifies the identification and comprehension of resistors.\n\nIn order to support the continued development and enhancement of ResistCalc, we\'ve included a small, unobtrusive ad.',
                   textAlign: TextAlign.justify,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Readex Pro',
                         color: Colors.black,
                       ),
                 ),
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      await launchURL(
-                          'discordapp.com/users/645368503460823082');
-                    },
-                    child: Icon(
-                      Icons.discord,
-                      color: FlutterFlowTheme.of(context).primary,
-                      size: 35.0,
-                    ),
-                  ).animateOnPageLoad(
-                      animationsMap['iconOnPageLoadAnimation']!),
-                ],
               ),
               Row(
                 mainAxisSize: MainAxisSize.max,

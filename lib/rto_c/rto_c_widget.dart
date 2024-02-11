@@ -11,7 +11,6 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'rto_c_model.dart';
 export 'rto_c_model.dart';
@@ -603,7 +602,11 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                       Text(
                                         _model.textController.text,
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              fontSize: 20.0,
+                                            ),
                                       ),
                                       if (_model.textController.text != '')
                                         Padding(
@@ -616,7 +619,11 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                               'null',
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  fontSize: 20.0,
+                                                ),
                                           ),
                                         ),
                                       if ((_model.textController.text !=
@@ -640,7 +647,11 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                               'null',
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  fontSize: 20.0,
+                                                ),
                                           ),
                                         ),
                                       if ((_model.textController.text !=
@@ -655,7 +666,11 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                           child: Text(
                                             '@',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  fontSize: 20.0,
+                                                ),
                                           ),
                                         ),
                                       if ((_model.textController.text !=
@@ -669,7 +684,11 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                             'null',
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                fontSize: 20.0,
+                                              ),
                                         ),
                                     ],
                                   ),
@@ -723,6 +742,18 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                 ),
                               ),
                             ],
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 10.0),
+                          child: FlutterFlowAdBanner(
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 50.0,
+                            showsTestAd: true,
                           ),
                         ),
                       ),
@@ -1265,47 +1296,6 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                               ],
                             ),
                           ),
-                        ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              5.0, 0.0, 5.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
-                                child: FaIcon(
-                                  FontAwesomeIcons.ad,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 30.0,
-                                ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Remove ads',
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
-                        child: FlutterFlowAdBanner(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 50.0,
-                          showsTestAd: true,
                         ),
                       ),
                     ],
