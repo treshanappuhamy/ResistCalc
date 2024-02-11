@@ -123,14 +123,14 @@ class _NavBarPageState extends State<NavBarPage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.manage_search,
+              Icons.search_sharp,
             ),
             label: 'R2C',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.format_color_fill,
+              Icons.colorize_sharp,
             ),
             label: 'C2R',
             tooltip: '',
