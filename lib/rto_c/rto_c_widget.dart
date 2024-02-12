@@ -760,6 +760,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                           alignment: const AlignmentDirectional(0.0, -1.0),
                           child: ListView(
                             padding: EdgeInsets.zero,
+                            reverse: true,
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             children: [
@@ -991,7 +992,6 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                         });
                                                       },
                                                     ),
-                                                    autofocus: true,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       labelText:
