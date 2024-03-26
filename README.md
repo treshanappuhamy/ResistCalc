@@ -15,7 +15,7 @@ FlutterFlow projects are built to run on the Flutter _stable_ release.
 #### Convenience: Accessible anytime, anywhere, for all your resistor decoding needs.
 
 ## How to Use:
-1. Install and Open the App from Playstore: Launch ResistCalc on your device.
+1. Install the .apk file from this GitHub Repo: Launch ResistCalc on your device.
 
 2. Input Colors: Enter the color bands of the resistor you want to decode.
 
