@@ -1,7 +1,8 @@
 # ResistCalc
 Welcome to ResistCalc, your dedicated application for decoding resistor color bands with ease. Whether you're an electronics professional or an enthusiast, ResistCalc simplifies the process of identifying and understanding resistor values.
 
-A new Flutter project.
+![Untitled design (5)](https://github.com/treshanappuhamy/ResistCalc/assets/63277369/44edd3d8-3a04-4fcc-aea7-918fa572ca6b)
+
 ## Features:
 Effortless Decoding: Decode resistor color bands effortlessly with our intuitive interface.
 
