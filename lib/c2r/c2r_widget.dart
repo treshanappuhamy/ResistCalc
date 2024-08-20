@@ -1069,7 +1069,6 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                               .dropDownband1Value =
                                                           val),
                                                   width: 150.0,
-                                                  height: 35.0,
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -1263,7 +1262,6 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                                 .dropDownband2Value =
                                                             val),
                                                     width: 150.0,
-                                                    height: 35.0,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -1450,7 +1448,6 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                                 .dropDownband3Value =
                                                             val),
                                                     width: 150.0,
-                                                    height: 35.0,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -1660,7 +1657,6 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                                 .dropDownMultiplierValue =
                                                             val),
                                                     width: 150.0,
-                                                    height: 35.0,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -1851,7 +1847,6 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                                 .dropDownToleranceValue =
                                                             val),
                                                     width: 150.0,
-                                                    height: 35.0,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -2029,7 +2024,6 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                               .dropDownTempCoeffValue =
                                                           val),
                                                   width: 150.0,
-                                                  height: 35.0,
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -2076,7 +2070,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                     alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 20.0, 0.0, 0.0),
+                                          0.0, 20.0, 0.0, 10.0),
                                       child: StreamBuilder<List<NmBANDSRecord>>(
                                         stream: queryNmBANDSRecord(
                                           queryBuilder: (nmBANDSRecord) =>
@@ -2118,7 +2112,6 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                 _model.dropDownNumbandValue =
                                                     val),
                                             width: 290.0,
-                                            height: 35.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium

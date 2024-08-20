@@ -765,7 +765,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                 child: SizedBox(
                                   width: 393.0,
-                                  height: 190.0,
+                                  height: 300.0,
                                   child: Stack(
                                     alignment: const AlignmentDirectional(0.0, 0.0),
                                     children: [
@@ -861,7 +861,6 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                               .dropDownValue3)![3];
                                                   setState(() {});
                                                 },
-                                                height: 35.0,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -907,7 +906,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 20.0, 0.0, 0.0),
+                                                  0.0, 30.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
@@ -1150,7 +1149,6 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                     setState(() {});
                                                   },
                                                   width: 90.0,
-                                                  height: 50.0,
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -1202,7 +1200,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    50.0, 42.0, 50.0, 0.0),
+                                                    50.0, 20.0, 50.0, 0.0),
                                             child: FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .dropDownValueController3 ??=
@@ -1261,7 +1259,6 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                             .dropDownValue3)![3];
                                                 setState(() {});
                                               },
-                                              height: 35.0,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -1310,7 +1307,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    50.0, 128.0, 50.0, 0.0),
+                                                    50.0, 140.0, 50.0, 0.0),
                                             child: FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .dropDowntemoValueController ??=
@@ -1369,7 +1366,6 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                             .dropDownValue3)![3];
                                                 setState(() {});
                                               },
-                                              height: 35.0,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
