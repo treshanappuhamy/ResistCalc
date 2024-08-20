@@ -40,7 +40,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : const NavBarPage(),
+          : const AboutWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -55,20 +55,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : const NavBarPage(),
+              : const AboutWidget(),
         ),
         FFRoute(
           name: 'C2R',
           path: '/c2r',
           builder: (context, params) =>
               params.isEmpty ? const NavBarPage(initialPage: 'C2R') : const C2rWidget(),
-        ),
-        FFRoute(
-          name: 'AIhelper',
-          path: '/aIhelper',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'AIhelper')
-              : const AIhelperWidget(),
         ),
         FFRoute(
           name: 'RtoC',

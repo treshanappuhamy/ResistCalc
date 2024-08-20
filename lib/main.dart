@@ -105,7 +105,6 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'RtoC': const RtoCWidget(),
       'C2R': const C2rWidget(),
-      'AIhelper': const AIhelperWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -173,29 +172,6 @@ class _NavBarPageState extends State<NavBarPage> {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: currentIndex == 1
-                        ? FlutterFlowTheme.of(context).info
-                        : FlutterFlowTheme.of(context).info,
-                    fontSize: 11.0,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.computer_sharp,
-                  color: currentIndex == 2
-                      ? FlutterFlowTheme.of(context).info
-                      : FlutterFlowTheme.of(context).info,
-                ),
-                Text(
-                  'ai(soon)',
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: currentIndex == 2
                         ? FlutterFlowTheme.of(context).info
                         : FlutterFlowTheme.of(context).info,
                     fontSize: 11.0,
