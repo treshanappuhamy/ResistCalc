@@ -911,20 +911,22 @@ class _C2rWidgetState extends State<C2rWidget> {
                                       ),
                                     ),
                                   ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, 1.44),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
-                                      child: FlutterFlowAdBanner(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height: 50.0,
-                                        showsTestAd: true,
+                                  if (false)
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(0.0, 1.44),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 10.0),
+                                        child: FlutterFlowAdBanner(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: 50.0,
+                                          showsTestAd: true,
+                                        ),
                                       ),
                                     ),
-                                  ),
                                   if ((_model.dropDownNumbandValue ==
                                           'THREE') ||
                                       (_model.dropDownNumbandValue == 'FOUR') ||

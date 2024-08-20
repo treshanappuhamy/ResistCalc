@@ -233,7 +233,7 @@ class _AboutWidgetState extends State<AboutWidget> {
                             10.0, 16.0, 10.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            Navigator.pop(context);
+                            context.pushNamed('C2R');
                           },
                           text: 'Close',
                           options: FFButtonOptions(
