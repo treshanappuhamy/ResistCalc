@@ -87,7 +87,7 @@ Future<bool> showInterstitialAd() async {
   return completer.future;
 }
 
-void requestConsent() {
+void adMobRequestConsent() {
   if (kIsWeb) {
     print('AdMob is not supported on web.');
     return;
@@ -116,4 +116,13 @@ void loadForm() {
 Future<bool> checkConsentNotRequired() async {
   var status = await ConsentInformation.instance.getConsentStatus();
   return status == ConsentStatus.notRequired;
+}
+
+void adMobUpdateRequestConfiguration() {
+  if (kIsWeb) {
+    print('AdMob is not supported on web.');
+    return;
+  }
+  final RequestConfiguration requestConfiguration = RequestConfiguration();
+  MobileAds.instance.updateRequestConfiguration(requestConfiguration);
 }

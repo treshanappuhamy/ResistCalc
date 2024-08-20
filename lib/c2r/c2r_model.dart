@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class C2rModel extends FlutterFlowModel<C2rWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for DropDownband1 widget.
   String? dropDownband1Value;
   FormFieldController<String>? dropDownband1ValueController;
@@ -29,17 +28,9 @@ class C2rModel extends FlutterFlowModel<C2rWidget> {
   String? dropDownNumbandValue;
   FormFieldController<String>? dropDownNumbandValueController;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
+  void dispose() {}
 }

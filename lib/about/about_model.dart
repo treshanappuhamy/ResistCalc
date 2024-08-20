@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'a_ihelper_widget.dart' show AIhelperWidget;
+import 'about_widget.dart' show AboutWidget;
 import 'package:flutter/material.dart';
 
-class AIhelperModel extends FlutterFlowModel<AIhelperWidget> {
+class AboutModel extends FlutterFlowModel<AboutWidget> {
   @override
   void initState(BuildContext context) {}
 

@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/components/aboutapp_widget.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -9,7 +8,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 import 'rto_c_model.dart';
@@ -27,21 +25,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final animationsMap = {
-    'textOnPageLoadAnimation': AnimationInfo(
-      loop: true,
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.bounceOut,
-          delay: 0.ms,
-          duration: 1330.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -51,6 +35,21 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
     _model.textFieldFocusNode!.addListener(() => setState(() {}));
+    animationsMap.addAll({
+      'textOnPageLoadAnimation': AnimationInfo(
+        loop: true,
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.bounceOut,
+            delay: 0.0.ms,
+            duration: 1330.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
   }
 
   @override
@@ -62,21 +61,10 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).info,
@@ -538,6 +526,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                 ),
@@ -584,6 +573,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                           fontFamily: 'Readex Pro',
                                           color: FlutterFlowTheme.of(context)
                                               .error,
+                                          letterSpacing: 0.0,
                                         ),
                                   ).animateOnPageLoad(animationsMap[
                                       'textOnPageLoadAnimation']!),
@@ -604,6 +594,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               fontSize: 20.0,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                       if (_model.textController.text != '')
@@ -621,6 +612,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                 .override(
                                                   fontFamily: 'Readex Pro',
                                                   fontSize: 20.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -649,6 +641,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                 .override(
                                                   fontFamily: 'Readex Pro',
                                                   fontSize: 20.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -668,6 +661,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                 .override(
                                                   fontFamily: 'Readex Pro',
                                                   fontSize: 20.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -686,6 +680,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                               .override(
                                                 fontFamily: 'Readex Pro',
                                                 fontSize: 20.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                     ],
@@ -732,6 +727,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),
@@ -809,6 +805,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                               List<NmBANDSRecord>
                                                   dropDownNmBANDSRecordList =
                                                   snapshot.data!;
+
                                               return FlutterFlowDropDown<
                                                   String>(
                                                 controller: _model
@@ -825,57 +822,53 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                   setState(() => _model
                                                           .dropDownValue1 =
                                                       val); // updatingAppStates
-                                                  setState(() {
-                                                    FFAppState().band1color =
-                                                        functions.arg2color(
-                                                            double.tryParse(_model
-                                                                .textController
-                                                                .text),
-                                                            _model
-                                                                .dropDownValue1,
-                                                            _model
-                                                                .dropDownValue2,
-                                                            _model
-                                                                .dropDownValue3)![0];
-                                                    FFAppState().band2color =
-                                                        functions.arg2color(
-                                                            double.tryParse(_model
-                                                                .textController
-                                                                .text),
-                                                            _model
-                                                                .dropDownValue1,
-                                                            _model
-                                                                .dropDownValue2,
-                                                            _model
-                                                                .dropDownValue3)![1];
-                                                    FFAppState().multipliercolor =
-                                                        functions.arg2color(
-                                                            double.tryParse(_model
-                                                                .textController
-                                                                .text),
-                                                            _model
-                                                                .dropDownValue1,
-                                                            _model
-                                                                .dropDownValue2,
-                                                            _model
-                                                                .dropDownValue3)![2];
-                                                    FFAppState().band3color =
-                                                        functions.arg2color(
-                                                            double.tryParse(_model
-                                                                .textController
-                                                                .text),
-                                                            _model
-                                                                .dropDownValue1,
-                                                            _model
-                                                                .dropDownValue2,
-                                                            _model
-                                                                .dropDownValue3)![3];
-                                                  });
+                                                  FFAppState().band1color =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![0];
+                                                  FFAppState().band2color =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![1];
+                                                  FFAppState().multipliercolor =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![2];
+                                                  FFAppState().band3color =
+                                                      functions.arg2color(
+                                                          double.tryParse(_model
+                                                              .textController
+                                                              .text),
+                                                          _model.dropDownValue1,
+                                                          _model.dropDownValue2,
+                                                          _model
+                                                              .dropDownValue3)![3];
+                                                  setState(() {});
                                                 },
                                                 height: 35.0,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                 hintText:
                                                     'Please select the number of bands',
                                                 icon: Icon(
@@ -937,61 +930,62 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                       const Duration(milliseconds: 5),
                                                       () async {
                                                         // updatingAppStates
-                                                        setState(() {
-                                                          FFAppState()
-                                                                  .band1color =
-                                                              functions.arg2color(
-                                                                  double.tryParse(
-                                                                      _model
-                                                                          .textController
-                                                                          .text),
-                                                                  _model
-                                                                      .dropDownValue1,
-                                                                  _model
-                                                                      .dropDownValue2,
-                                                                  _model
-                                                                      .dropDownValue3)![0];
-                                                          FFAppState()
-                                                                  .band2color =
-                                                              functions.arg2color(
-                                                                  double.tryParse(
-                                                                      _model
-                                                                          .textController
-                                                                          .text),
-                                                                  _model
-                                                                      .dropDownValue1,
-                                                                  _model
-                                                                      .dropDownValue2,
-                                                                  _model
-                                                                      .dropDownValue3)![1];
-                                                          FFAppState()
-                                                                  .multipliercolor =
-                                                              functions.arg2color(
-                                                                  double.tryParse(_model
-                                                                      .textController
-                                                                      .text),
-                                                                  _model
-                                                                      .dropDownValue1,
-                                                                  _model
-                                                                      .dropDownValue2,
-                                                                  _model
-                                                                      .dropDownValue3)![2];
-                                                          FFAppState()
-                                                                  .band3color =
-                                                              functions.arg2color(
-                                                                  double.tryParse(
-                                                                      _model
-                                                                          .textController
-                                                                          .text),
-                                                                  _model
-                                                                      .dropDownValue1,
-                                                                  _model
-                                                                      .dropDownValue2,
-                                                                  _model
-                                                                      .dropDownValue3)![3];
-                                                        });
+                                                        FFAppState()
+                                                                .band1color =
+                                                            functions.arg2color(
+                                                                double.tryParse(
+                                                                    _model
+                                                                        .textController
+                                                                        .text),
+                                                                _model
+                                                                    .dropDownValue1,
+                                                                _model
+                                                                    .dropDownValue2,
+                                                                _model
+                                                                    .dropDownValue3)![0];
+                                                        FFAppState()
+                                                                .band2color =
+                                                            functions.arg2color(
+                                                                double.tryParse(
+                                                                    _model
+                                                                        .textController
+                                                                        .text),
+                                                                _model
+                                                                    .dropDownValue1,
+                                                                _model
+                                                                    .dropDownValue2,
+                                                                _model
+                                                                    .dropDownValue3)![1];
+                                                        FFAppState()
+                                                                .multipliercolor =
+                                                            functions.arg2color(
+                                                                double.tryParse(
+                                                                    _model
+                                                                        .textController
+                                                                        .text),
+                                                                _model
+                                                                    .dropDownValue1,
+                                                                _model
+                                                                    .dropDownValue2,
+                                                                _model
+                                                                    .dropDownValue3)![2];
+                                                        FFAppState()
+                                                                .band3color =
+                                                            functions.arg2color(
+                                                                double.tryParse(
+                                                                    _model
+                                                                        .textController
+                                                                        .text),
+                                                                _model
+                                                                    .dropDownValue1,
+                                                                _model
+                                                                    .dropDownValue2,
+                                                                _model
+                                                                    .dropDownValue3)![3];
+                                                        setState(() {});
                                                       },
                                                     ),
+                                                    autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       labelText:
@@ -999,12 +993,24 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .labelMedium,
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       alignLabelWithHint: false,
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .labelMedium,
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       enabledBorder:
                                                           UnderlineInputBorder(
                                                         borderSide: BorderSide(
@@ -1056,7 +1062,12 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     textAlign: TextAlign.start,
                                                     keyboardType:
                                                         const TextInputType
@@ -1091,60 +1102,63 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                     setState(() => _model
                                                             .dropDownValue2 =
                                                         val); // updatingAppStates
-                                                    setState(() {
-                                                      FFAppState().band1color =
-                                                          functions.arg2color(
-                                                              double.tryParse(_model
-                                                                  .textController
-                                                                  .text),
-                                                              _model
-                                                                  .dropDownValue1,
-                                                              _model
-                                                                  .dropDownValue2,
-                                                              _model
-                                                                  .dropDownValue3)![0];
-                                                      FFAppState().band2color =
-                                                          functions.arg2color(
-                                                              double.tryParse(_model
-                                                                  .textController
-                                                                  .text),
-                                                              _model
-                                                                  .dropDownValue1,
-                                                              _model
-                                                                  .dropDownValue2,
-                                                              _model
-                                                                  .dropDownValue3)![1];
-                                                      FFAppState()
-                                                              .multipliercolor =
-                                                          functions.arg2color(
-                                                              double.tryParse(_model
-                                                                  .textController
-                                                                  .text),
-                                                              _model
-                                                                  .dropDownValue1,
-                                                              _model
-                                                                  .dropDownValue2,
-                                                              _model
-                                                                  .dropDownValue3)![2];
-                                                      FFAppState().band3color =
-                                                          functions.arg2color(
-                                                              double.tryParse(_model
-                                                                  .textController
-                                                                  .text),
-                                                              _model
-                                                                  .dropDownValue1,
-                                                              _model
-                                                                  .dropDownValue2,
-                                                              _model
-                                                                  .dropDownValue3)![3];
-                                                    });
+                                                    FFAppState().band1color =
+                                                        functions.arg2color(
+                                                            double.tryParse(_model
+                                                                .textController
+                                                                .text),
+                                                            _model
+                                                                .dropDownValue1,
+                                                            _model
+                                                                .dropDownValue2,
+                                                            _model
+                                                                .dropDownValue3)![0];
+                                                    FFAppState().band2color =
+                                                        functions.arg2color(
+                                                            double.tryParse(_model
+                                                                .textController
+                                                                .text),
+                                                            _model
+                                                                .dropDownValue1,
+                                                            _model
+                                                                .dropDownValue2,
+                                                            _model
+                                                                .dropDownValue3)![1];
+                                                    FFAppState().multipliercolor =
+                                                        functions.arg2color(
+                                                            double.tryParse(_model
+                                                                .textController
+                                                                .text),
+                                                            _model
+                                                                .dropDownValue1,
+                                                            _model
+                                                                .dropDownValue2,
+                                                            _model
+                                                                .dropDownValue3)![2];
+                                                    FFAppState().band3color =
+                                                        functions.arg2color(
+                                                            double.tryParse(_model
+                                                                .textController
+                                                                .text),
+                                                            _model
+                                                                .dropDownValue1,
+                                                            _model
+                                                                .dropDownValue2,
+                                                            _model
+                                                                .dropDownValue3)![3];
+                                                    setState(() {});
                                                   },
                                                   width: 90.0,
                                                   height: 50.0,
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium,
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintText: 'Please select...',
                                                   icon: Icon(
                                                     Icons
@@ -1208,49 +1222,53 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                 setState(() => _model
                                                         .dropDownValue3 =
                                                     val); // updatingAppStates
-                                                setState(() {
-                                                  FFAppState().band1color =
-                                                      functions.arg2color(
-                                                          double.tryParse(_model
-                                                              .textController
-                                                              .text),
-                                                          _model.dropDownValue1,
-                                                          _model.dropDownValue2,
-                                                          _model
-                                                              .dropDownValue3)![0];
-                                                  FFAppState().band2color =
-                                                      functions.arg2color(
-                                                          double.tryParse(_model
-                                                              .textController
-                                                              .text),
-                                                          _model.dropDownValue1,
-                                                          _model.dropDownValue2,
-                                                          _model
-                                                              .dropDownValue3)![1];
-                                                  FFAppState().multipliercolor =
-                                                      functions.arg2color(
-                                                          double.tryParse(_model
-                                                              .textController
-                                                              .text),
-                                                          _model.dropDownValue1,
-                                                          _model.dropDownValue2,
-                                                          _model
-                                                              .dropDownValue3)![2];
-                                                  FFAppState().band3color =
-                                                      functions.arg2color(
-                                                          double.tryParse(_model
-                                                              .textController
-                                                              .text),
-                                                          _model.dropDownValue1,
-                                                          _model.dropDownValue2,
-                                                          _model
-                                                              .dropDownValue3)![3];
-                                                });
+                                                FFAppState().band1color =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![0];
+                                                FFAppState().band2color =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![1];
+                                                FFAppState().multipliercolor =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![2];
+                                                FFAppState().band3color =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![3];
+                                                setState(() {});
                                               },
                                               height: 35.0,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               hintText: _model.dropDownValue1 ==
                                                       'THREE'
                                                   ? 'N/A'
@@ -1312,49 +1330,53 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                                 setState(() => _model
                                                         .dropDowntemoValue =
                                                     val); // updatingAppStates
-                                                setState(() {
-                                                  FFAppState().band1color =
-                                                      functions.arg2color(
-                                                          double.tryParse(_model
-                                                              .textController
-                                                              .text),
-                                                          _model.dropDownValue1,
-                                                          _model.dropDownValue2,
-                                                          _model
-                                                              .dropDownValue3)![0];
-                                                  FFAppState().band2color =
-                                                      functions.arg2color(
-                                                          double.tryParse(_model
-                                                              .textController
-                                                              .text),
-                                                          _model.dropDownValue1,
-                                                          _model.dropDownValue2,
-                                                          _model
-                                                              .dropDownValue3)![1];
-                                                  FFAppState().multipliercolor =
-                                                      functions.arg2color(
-                                                          double.tryParse(_model
-                                                              .textController
-                                                              .text),
-                                                          _model.dropDownValue1,
-                                                          _model.dropDownValue2,
-                                                          _model
-                                                              .dropDownValue3)![2];
-                                                  FFAppState().band3color =
-                                                      functions.arg2color(
-                                                          double.tryParse(_model
-                                                              .textController
-                                                              .text),
-                                                          _model.dropDownValue1,
-                                                          _model.dropDownValue2,
-                                                          _model
-                                                              .dropDownValue3)![3];
-                                                });
+                                                FFAppState().band1color =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![0];
+                                                FFAppState().band2color =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![1];
+                                                FFAppState().multipliercolor =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![2];
+                                                FFAppState().band3color =
+                                                    functions.arg2color(
+                                                        double.tryParse(_model
+                                                            .textController
+                                                            .text),
+                                                        _model.dropDownValue1,
+                                                        _model.dropDownValue2,
+                                                        _model
+                                                            .dropDownValue3)![3];
+                                                setState(() {});
                                               },
                                               height: 35.0,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               hintText:
                                                   'Temperature Coefficient',
                                               icon: Icon(
@@ -1437,6 +1459,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                                     fontFamily: 'Outfit',
                                     color: FlutterFlowTheme.of(context).info,
                                     fontSize: 50.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ),
@@ -1452,26 +1475,7 @@ class _RtoCWidgetState extends State<RtoCWidget> with TickerProviderStateMixin {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  enableDrag: false,
-                                  context: context,
-                                  builder: (context) {
-                                    return GestureDetector(
-                                      onTap: () => _model
-                                              .unfocusNode.canRequestFocus
-                                          ? FocusScope.of(context)
-                                              .requestFocus(_model.unfocusNode)
-                                          : FocusScope.of(context).unfocus(),
-                                      child: Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: const AboutappWidget(),
-                                      ),
-                                    );
-                                  },
-                                ).then((value) => safeSetState(() {}));
+                                context.pushNamed('about');
                               },
                               child: Icon(
                                 Icons.info,

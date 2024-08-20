@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/components/aboutapp_widget.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -7,8 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 import 'c2r_model.dart';
 export 'c2r_model.dart';
 
@@ -39,21 +36,8 @@ class _C2rWidgetState extends State<C2rWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -713,6 +697,8 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                                 fontFamily:
                                                                     'Readex Pro',
                                                                 fontSize: 25.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                         ),
                                                       ),
@@ -737,6 +723,8 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                                 fontFamily:
                                                                     'Readex Pro',
                                                                 fontSize: 25.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                         ),
                                                       ),
@@ -753,6 +741,8 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                                 fontFamily:
                                                                     'Readex Pro',
                                                                 fontSize: 25.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                         ),
                                                       ),
@@ -775,6 +765,8 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                                 fontFamily:
                                                                     'Readex Pro',
                                                                 fontSize: 25.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                         ),
                                                       ),
@@ -791,6 +783,8 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                                 fontFamily:
                                                                     'Readex Pro',
                                                                 fontSize: 25.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                         ),
                                                       ),
@@ -830,6 +824,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                             List<TempCoeffRecord>
                                                                 textTempCoeffRecordList =
                                                                 snapshot.data!;
+
                                                             return Text(
                                                               () {
                                                                 if (_model
@@ -880,6 +875,8 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                                         'Readex Pro',
                                                                     fontSize:
                                                                         25.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                   ),
                                                             );
                                                           },
@@ -905,6 +902,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                           fontFamily:
                                                               'Readex Pro',
                                                           fontSize: 16.0,
+                                                          letterSpacing: 0.0,
                                                         ),
                                               ),
                                             ),
@@ -1048,6 +1046,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                 List<ThreeBandRecord>
                                                     dropDownband1ThreeBandRecordList =
                                                     snapshot.data!;
+
                                                 return FlutterFlowDropDown<
                                                     String>(
                                                   controller: _model
@@ -1072,7 +1071,12 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium,
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintText: '1st Band',
                                                   icon: Icon(
                                                     Icons
@@ -1240,6 +1244,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                   List<ThreeBand2Record>
                                                       dropDownband2ThreeBand2RecordList =
                                                       snapshot.data!;
+
                                                   return FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
@@ -1257,10 +1262,14 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                             val),
                                                     width: 150.0,
                                                     height: 35.0,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     hintText: '2nd Band',
                                                     icon: Icon(
                                                       Icons
@@ -1422,6 +1431,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                   List<ThreeBand3Record>
                                                       dropDownband3ThreeBand3RecordList =
                                                       snapshot.data!;
+
                                                   return FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
@@ -1439,10 +1449,14 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                             val),
                                                     width: 150.0,
                                                     height: 35.0,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     hintText: '3rd Band',
                                                     icon: Icon(
                                                       Icons
@@ -1623,6 +1637,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                   List<MultiplierRecord>
                                                       dropDownMultiplierMultiplierRecordList =
                                                       snapshot.data!;
+
                                                   return FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
@@ -1644,10 +1659,14 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                             val),
                                                     width: 150.0,
                                                     height: 35.0,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     hintText: 'Multipier',
                                                     icon: Icon(
                                                       Icons
@@ -1809,6 +1828,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                   List<ToleranceRecord>
                                                       dropDownToleranceToleranceRecordList =
                                                       snapshot.data!;
+
                                                   return FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
@@ -1830,10 +1850,14 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                             val),
                                                     width: 150.0,
                                                     height: 35.0,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     hintText: 'Tolerance',
                                                     icon: Icon(
                                                       Icons
@@ -1982,6 +2006,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                 List<TempCoeffRecord>
                                                     dropDownTempCoeffTempCoeffRecordList =
                                                     snapshot.data!;
+
                                                 return FlutterFlowDropDown<
                                                     String>(
                                                   controller: _model
@@ -2006,7 +2031,12 @@ class _C2rWidgetState extends State<C2rWidget> {
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium,
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintText: 'Temp. Coeff.',
                                                   icon: Icon(
                                                     Icons
@@ -2072,6 +2102,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                           List<NmBANDSRecord>
                                               dropDownNumbandNmBANDSRecordList =
                                               snapshot.data!;
+
                                           return FlutterFlowDropDown<String>(
                                             controller: _model
                                                     .dropDownNumbandValueController ??=
@@ -2088,7 +2119,11 @@ class _C2rWidgetState extends State<C2rWidget> {
                                             height: 35.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             hintText:
                                                 'Please select the number of bands',
                                             icon: Icon(
@@ -2168,6 +2203,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                                     fontFamily: 'Outfit',
                                     color: FlutterFlowTheme.of(context).info,
                                     fontSize: 50.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ),
@@ -2183,26 +2219,7 @@ class _C2rWidgetState extends State<C2rWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  enableDrag: false,
-                                  context: context,
-                                  builder: (context) {
-                                    return GestureDetector(
-                                      onTap: () => _model
-                                              .unfocusNode.canRequestFocus
-                                          ? FocusScope.of(context)
-                                              .requestFocus(_model.unfocusNode)
-                                          : FocusScope.of(context).unfocus(),
-                                      child: Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: const AboutappWidget(),
-                                      ),
-                                    );
-                                  },
-                                ).then((value) => safeSetState(() {}));
+                                context.pushNamed('about');
                               },
                               child: Icon(
                                 Icons.info,
